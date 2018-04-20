@@ -8,6 +8,6 @@ namespace Interfaces
 {
     public interface IChatReceiver
     {
-        void ReceiveMessage();
+        string ReceiveMessage();
     }
 }

@@ -26,3 +26,17 @@ C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.dl
 C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.pdb
 C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.pdb
 C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Track.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.dll.config
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Track.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.xml
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.xml

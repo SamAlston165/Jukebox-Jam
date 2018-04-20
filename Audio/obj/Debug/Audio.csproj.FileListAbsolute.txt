@@ -8,3 +8,13 @@ c:\users\owner\Source\Repos\JukeboxJam\Audio\obj\Debug\Audio.csprojResolveAssemb
 c:\users\owner\Source\Repos\JukeboxJam\Audio\obj\Debug\Audio.csproj.CoreCompileInputs.cache
 c:\users\owner\Source\Repos\JukeboxJam\Audio\obj\Debug\Audio.dll
 c:\users\owner\Source\Repos\JukeboxJam\Audio\obj\Debug\Audio.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\bin\Debug\Audio.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\bin\Debug\Audio.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\bin\Debug\Interfaces.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\bin\Debug\NAudio.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\bin\Debug\Interfaces.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\bin\Debug\NAudio.xml
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\obj\Debug\Audio.csprojResolveAssemblyReference.cache
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\obj\Debug\Audio.csproj.CoreCompileInputs.cache
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\obj\Debug\Audio.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\Audio\obj\Debug\Audio.pdb

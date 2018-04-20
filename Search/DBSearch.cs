@@ -1,6 +1,4 @@
-﻿
-using Implementations;
-using Interfaces;
+﻿using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Track;
 
 namespace Search
 {
@@ -23,7 +22,7 @@ namespace Search
 
         public List<ITrack> FindTracks(string route, string term)
         {
-            List<Track> result;
+            List<DBTrack> result;
 
             result = RunAsync(route, term).GetAwaiter().GetResult();
 
@@ -31,16 +30,16 @@ namespace Search
 
             //convert from list<Track> to list<ITrack>
             List<ITrack> theResults = new List<ITrack>();
-            foreach(Track t in result)
+            foreach(DBTrack t in result)
             {
                 theResults.Add(t);
             }
             return theResults;
         }
 
-        static async Task<List<Track>> RunAsync(string route, string term)
+        static async Task<List<DBTrack>> RunAsync(string route, string term)
         {
-            List<Track> restSong = null;
+            List<DBTrack> restSong = null;
 
             client.BaseAddress = new Uri("http://localhost:64195");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -59,14 +58,14 @@ namespace Search
             return restSong;
         }
 
-        static async Task<List<Track>> GetSongAsync(string path)
+        static async Task<List<DBTrack>> GetSongAsync(string path)
         {
-            List<Track> song = null;
+            List<DBTrack> song = null;
             HttpResponseMessage response = await client.GetAsync(path).ConfigureAwait(false);
 
             if (response.IsSuccessStatusCode)
             {
-                song = await response.Content.ReadAsAsync<List<Track>>().ConfigureAwait(false);
+                song = await response.Content.ReadAsAsync<List<DBTrack>>().ConfigureAwait(false);
             }
 
             return song;

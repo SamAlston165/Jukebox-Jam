@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Implementations
+namespace Track
 {
     public class StaticTrack : ITrack
     {

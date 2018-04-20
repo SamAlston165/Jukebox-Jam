@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Implementations
+namespace User
 {
-    public class User : IUser
+    public class AUser : IUser
     {
         public string Username { get; set; }
 
-        public User(string username)
+        public AUser(string username)
         {
             this.Username = username;
         }

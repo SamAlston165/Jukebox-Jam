@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Implementations
+namespace Playlist
 {
-    public class Playlist : IPlaylist
+    public class APlaylist : IPlaylist
     {
         public string Title { get; private set; }
         private List<ITrack> trackList;
 
         //Empty Constructor
-        public Playlist()
+        public APlaylist()
         {
             this.Title = "";
             this.trackList = new List<ITrack>();

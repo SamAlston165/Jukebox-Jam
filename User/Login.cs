@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Implementations
+namespace User
 {
     public class Login : ILogin
     {
@@ -13,7 +13,7 @@ namespace Implementations
         {
             if (UsernameAndPasswordAreInDatabase(username, password))
             {
-                return new User(username);
+                return new AUser(username);
             }
             else
             {
@@ -36,7 +36,7 @@ namespace Implementations
         public IUser CreateNewUser(string username, string password)
         {
             AddUserToDatabase(username, password);
-            return new User(username);
+            return new AUser(username);
         }
 
         /// <summary>

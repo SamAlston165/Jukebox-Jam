@@ -44,7 +44,7 @@
     <Compile Include="CurrentTrack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticTrack.cs" />
-    <Compile Include="Track.cs" />
+    <Compile Include="DBTrack.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">

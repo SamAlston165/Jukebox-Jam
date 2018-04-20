@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Track;
 
-namespace Implementations
+namespace Playlist
 {
     public class ActivePlaylist : IActivePlaylist
     {
@@ -21,7 +22,7 @@ namespace Implementations
             bool currentTrackIsSet = SetCurrentTrack(0);
             if(!currentTrackIsSet)
             {
-                this.CurrentTrack = new Track();
+                this.CurrentTrack = new DBTrack();
             }
         }
 

@@ -5,10 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Implementations
+namespace Chat
 {
-    public class Chat : IChat
+    public class ChatSender : IChatSender
     {
+        private IUser user;
+
+        public ChatSender(IUser user)
+        {
+            this.user = user;
+        }
+
         public void ReceiveMessage()
         {
             throw new NotImplementedException();
@@ -16,7 +23,7 @@ namespace Implementations
 
         public void SendMessage(string message)
         {
-            throw new NotImplementedException();
+            string fullMessage = user.Username + ": " + message;
         }
     }
 }

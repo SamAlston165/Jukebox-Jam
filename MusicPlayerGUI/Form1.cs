@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Chat;
+using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using User;
+using Views;
 
 namespace MusicPlayerGUI
 {
     public partial class Form1 : Form
     {
+        private IChatSender chat;
+        private IUser user;
         public Form1()
         {
             InitializeComponent();
@@ -19,6 +25,10 @@ namespace MusicPlayerGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            user = new AUser("");
+            chat = new ChatSender(user);
+
+
             this.richTextBox1.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
         }
         /*
@@ -30,6 +40,8 @@ namespace MusicPlayerGUI
         {
             this.richTextBox2.Text += Environment.NewLine + "User: " + this.richTextBox3.Text;
             this.richTextBox3.Text = "";
+
+            chat.SendMessage(richTextBox3.Text);
         }
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

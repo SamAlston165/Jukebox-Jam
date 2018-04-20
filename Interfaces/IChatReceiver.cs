@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public interface IChat
+    public interface IChatReceiver
     {
-        void SendMessage(string message);
         void ReceiveMessage();
     }
 }

@@ -18,3 +18,11 @@ C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPl
 C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.CoreCompileInputs.cache
 C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe
 C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Views.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Views.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.dll
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.pdb
+C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.pdb

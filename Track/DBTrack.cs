@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Implementations
+namespace Track
 {
-    public class Track : ITrack
+    public class DBTrack : ITrack
     {
         //instance variables
         public string Artist { get; set; }
@@ -17,7 +17,7 @@ namespace Implementations
         public string Year { get; set; }
 
         //empty constructor
-        public Track()
+        public DBTrack()
         {
             this.Artist = "";
             this.Title = "";
@@ -26,7 +26,7 @@ namespace Implementations
             this.Year = "";
         }
 
-        public Track(string artist, string title, string genre)
+        public DBTrack(string artist, string title, string genre)
         {
             this.Artist = artist;
             this.Title = title;
@@ -36,7 +36,7 @@ namespace Implementations
         }
 
         //full constructor
-        public Track(string artist, string title, string genre, string year, string album)
+        public DBTrack(string artist, string title, string genre, string year, string album)
         {
             this.Artist = artist;
             this.Title = title;

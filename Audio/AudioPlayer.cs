@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Implementations
+namespace Audio
 {
     public class AudioPlayer : IAudioPlayer
     {

@@ -43,7 +43,8 @@
   <ItemGroup>
     <Compile Include="IActivePlaylist.cs" />
     <Compile Include="IAudioPlayer.cs" />
-    <Compile Include="IChat.cs" />
+    <Compile Include="IChatReceiver.cs" />
+    <Compile Include="IChatSender.cs" />
     <Compile Include="ICurrentTrack.cs" />
     <Compile Include="IImageSearch.cs" />
     <Compile Include="ILogin.cs" />

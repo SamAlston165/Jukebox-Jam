@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace Implementations
+namespace Track
 {
     public class CurrentTrack : ICurrentTrack
     {
@@ -22,7 +22,7 @@ namespace Implementations
 
         public CurrentTrack()
         {
-            this.track = new Track();
+            this.track = new DBTrack();
         }
 
         public void SetTrack(ITrack track)

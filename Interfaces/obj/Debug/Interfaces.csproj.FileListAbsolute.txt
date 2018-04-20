@@ -1,0 +1,6 @@
+c:\users\owner\Source\Repos\JukeboxJam\Interfaces\bin\Debug\Interfaces.dll
+c:\users\owner\Source\Repos\JukeboxJam\Interfaces\bin\Debug\Interfaces.pdb
+c:\users\owner\Source\Repos\JukeboxJam\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
+c:\users\owner\Source\Repos\JukeboxJam\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+c:\users\owner\Source\Repos\JukeboxJam\Interfaces\obj\Debug\Interfaces.dll
+c:\users\owner\Source\Repos\JukeboxJam\Interfaces\obj\Debug\Interfaces.pdb

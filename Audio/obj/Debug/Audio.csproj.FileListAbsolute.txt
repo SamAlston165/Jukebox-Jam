@@ -1,0 +1,10 @@
+c:\users\owner\Source\Repos\JukeboxJam\Audio\bin\Debug\Audio.dll
+c:\users\owner\Source\Repos\JukeboxJam\Audio\bin\Debug\Audio.pdb
+c:\users\owner\Source\Repos\JukeboxJam\Audio\bin\Debug\Interfaces.dll
+c:\users\owner\Source\Repos\JukeboxJam\Audio\bin\Debug\NAudio.dll
+c:\users\owner\Source\Repos\JukeboxJam\Audio\bin\Debug\Interfaces.pdb
+c:\users\owner\Source\Repos\JukeboxJam\Audio\bin\Debug\NAudio.xml
+c:\users\owner\Source\Repos\JukeboxJam\Audio\obj\Debug\Audio.csprojResolveAssemblyReference.cache
+c:\users\owner\Source\Repos\JukeboxJam\Audio\obj\Debug\Audio.csproj.CoreCompileInputs.cache
+c:\users\owner\Source\Repos\JukeboxJam\Audio\obj\Debug\Audio.dll
+c:\users\owner\Source\Repos\JukeboxJam\Audio\obj\Debug\Audio.pdb

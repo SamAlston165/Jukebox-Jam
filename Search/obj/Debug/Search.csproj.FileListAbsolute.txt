@@ -1,0 +1,10 @@
+c:\users\owner\Source\Repos\JukeboxJam\Search\bin\Debug\Search.dll
+c:\users\owner\Source\Repos\JukeboxJam\Search\bin\Debug\Search.pdb
+c:\users\owner\Source\Repos\JukeboxJam\Search\bin\Debug\Implementations.dll
+c:\users\owner\Source\Repos\JukeboxJam\Search\bin\Debug\Interfaces.dll
+c:\users\owner\Source\Repos\JukeboxJam\Search\bin\Debug\Implementations.pdb
+c:\users\owner\Source\Repos\JukeboxJam\Search\bin\Debug\Interfaces.pdb
+c:\users\owner\Source\Repos\JukeboxJam\Search\obj\Debug\Search.csprojResolveAssemblyReference.cache
+c:\users\owner\Source\Repos\JukeboxJam\Search\obj\Debug\Search.csproj.CoreCompileInputs.cache
+c:\users\owner\Source\Repos\JukeboxJam\Search\obj\Debug\Search.dll
+c:\users\owner\Source\Repos\JukeboxJam\Search\obj\Debug\Search.pdb

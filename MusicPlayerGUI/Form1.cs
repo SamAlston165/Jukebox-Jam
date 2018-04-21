@@ -72,9 +72,8 @@ namespace MusicPlayerGUI
         private void btnSend_Click(object sender, EventArgs e)
         {
             this.richTextBox2.Text += Environment.NewLine + "User: " + this.richTextBox3.Text;
-            this.richTextBox3.Text = "";
-
             chatSender.SendMessage(richTextBox3.Text);
+            this.richTextBox3.Text = "";
         }
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

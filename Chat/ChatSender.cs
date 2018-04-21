@@ -38,17 +38,18 @@ namespace Chat
 
         public void SendMessage(string message)
         {
-            string fullMessage = user.Username + ": " + message;
-
             try
             {
+                string fullMessage = user.Username + ": " + message;
+
                 // Create a TcpClient.
                 // Note, for this client to work you need to have a TcpServer 
                 // connected to the same address as specified by the server, port
                 // combination.
                 int port = 22;
                 string ip = "159.65.235.100";
-                TcpClient client = new TcpClient(ip, port);
+                TcpClient client = new TcpClient();
+                client.Connect(ip, port);
 
                 // Translate the passed message into ASCII and store it as a Byte array.
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(fullMessage);

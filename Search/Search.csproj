@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBSearchv2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DBSearch.cs" />
     <Compile Include="StaticLocalTracks.cs" />

@@ -44,6 +44,9 @@ namespace MusicPlayerGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string trackHost = "http://159.65.235.100";
+            int trackPort = 6024;
+
             login = new Login();
 
             //user = login.AuthorizeUser("username", "password");
@@ -52,12 +55,12 @@ namespace MusicPlayerGUI
             chatReceiver = new ChatReceiver();
 
             activePlaylist = new ActivePlaylist(new APlaylist());
-            audioPlayer = new AudioPlayer();
+            audioPlayer = new DBAudioPlayer(new AudioPlayer(), trackHost, trackPort);
             currentTrack = new CurrentTrack();
 
             //imageSearch = new ImageSearch();
             //playlistSearch = new PlaylistSearch();
-            trackSearch = new DBSearch("http://159.65.235.100", 6024);
+            trackSearch = new DBSearch(trackHost, trackPort);
 
             this.richTextBox1.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
         }

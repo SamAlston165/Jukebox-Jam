@@ -18,6 +18,7 @@ namespace Search
         public DBSearch(string hostAddr, int port)
         {
             host = $"{hostAddr}:{port.ToString()}";
+            client.BaseAddress = new Uri("http://localhost:64195");
         }
 
         public List<ITrack> FindTracks(string route, string term)
@@ -41,7 +42,6 @@ namespace Search
         {
             List<DBTrack> restSong = null;
 
-            client.BaseAddress = new Uri("http://localhost:64195");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

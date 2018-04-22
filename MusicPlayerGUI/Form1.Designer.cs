@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.channelBox = new System.Windows.Forms.ListBox();
 			this.songInfoBox = new System.Windows.Forms.RichTextBox();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -46,7 +47,16 @@
 			this.playlistSearchButton = new System.Windows.Forms.Button();
 			this.playlistSearchTextBox = new System.Windows.Forms.TextBox();
 			this.editChannelButton = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
+			this.searchBackground = new System.Windows.Forms.RichTextBox();
+			this.songSearchTextBox = new System.Windows.Forms.TextBox();
+			this.editPlaylistBox = new System.Windows.Forms.GroupBox();
+			this.moveUpButton = new System.Windows.Forms.Button();
+			this.removeButton = new System.Windows.Forms.Button();
+			this.moveDownButton = new System.Windows.Forms.Button();
+			this.searchTypeDropDown = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.playlistViewBox)).BeginInit();
+			this.editPlaylistBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// channelBox
@@ -139,7 +149,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(361, 3);
+			this.label3.Location = new System.Drawing.Point(277, 3);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(89, 25);
 			this.label3.TabIndex = 7;
@@ -216,12 +226,14 @@
 			this.playlistViewBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.playlistViewBox.Location = new System.Drawing.Point(126, 31);
 			this.playlistViewBox.Name = "playlistViewBox";
-			this.playlistViewBox.Size = new System.Drawing.Size(552, 300);
+			this.playlistViewBox.Size = new System.Drawing.Size(414, 300);
 			this.playlistViewBox.TabIndex = 13;
+			this.playlistViewBox.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.playlistViewBox_CellContentClick);
 			// 
 			// playlistSearchButton
 			// 
-			this.playlistSearchButton.Location = new System.Drawing.Point(470, 289);
+			this.playlistSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.playlistSearchButton.Location = new System.Drawing.Point(348, 45);
 			this.playlistSearchButton.Name = "playlistSearchButton";
 			this.playlistSearchButton.Size = new System.Drawing.Size(75, 20);
 			this.playlistSearchButton.TabIndex = 14;
@@ -230,13 +242,14 @@
 			// 
 			// playlistSearchTextBox
 			// 
-			this.playlistSearchTextBox.Location = new System.Drawing.Point(269, 289);
+			this.playlistSearchTextBox.Location = new System.Drawing.Point(153, 45);
 			this.playlistSearchTextBox.Name = "playlistSearchTextBox";
 			this.playlistSearchTextBox.Size = new System.Drawing.Size(181, 20);
 			this.playlistSearchTextBox.TabIndex = 15;
 			// 
 			// editChannelButton
 			// 
+			this.editChannelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.editChannelButton.Location = new System.Drawing.Point(12, 288);
 			this.editChannelButton.Name = "editChannelButton";
 			this.editChannelButton.Size = new System.Drawing.Size(75, 23);
@@ -244,12 +257,98 @@
 			this.editChannelButton.Text = "Edit";
 			this.editChannelButton.UseVisualStyleBackColor = true;
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(568, 3);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(81, 25);
+			this.label4.TabIndex = 17;
+			this.label4.Text = "Search";
+			this.label4.Click += new System.EventHandler(this.label4_Click);
+			// 
+			// searchBackground
+			// 
+			this.searchBackground.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.searchBackground.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.searchBackground.Location = new System.Drawing.Point(546, 31);
+			this.searchBackground.Name = "searchBackground";
+			this.searchBackground.Size = new System.Drawing.Size(132, 300);
+			this.searchBackground.TabIndex = 18;
+			this.searchBackground.Text = "";
+			// 
+			// songSearchTextBox
+			// 
+			this.songSearchTextBox.Location = new System.Drawing.Point(553, 46);
+			this.songSearchTextBox.Name = "songSearchTextBox";
+			this.songSearchTextBox.Size = new System.Drawing.Size(120, 20);
+			this.songSearchTextBox.TabIndex = 20;
+			// 
+			// editPlaylistBox
+			// 
+			this.editPlaylistBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.editPlaylistBox.Controls.Add(this.moveDownButton);
+			this.editPlaylistBox.Controls.Add(this.removeButton);
+			this.editPlaylistBox.Controls.Add(this.moveUpButton);
+			this.editPlaylistBox.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.editPlaylistBox.Location = new System.Drawing.Point(458, 46);
+			this.editPlaylistBox.Name = "editPlaylistBox";
+			this.editPlaylistBox.Size = new System.Drawing.Size(73, 265);
+			this.editPlaylistBox.TabIndex = 21;
+			this.editPlaylistBox.TabStop = false;
+			this.editPlaylistBox.Text = "Edit Playlist";
+			// 
+			// moveUpButton
+			// 
+			this.moveUpButton.Image = ((System.Drawing.Image)(resources.GetObject("moveUpButton.Image")));
+			this.moveUpButton.Location = new System.Drawing.Point(9, 47);
+			this.moveUpButton.Name = "moveUpButton";
+			this.moveUpButton.Size = new System.Drawing.Size(55, 41);
+			this.moveUpButton.TabIndex = 0;
+			this.moveUpButton.UseVisualStyleBackColor = true;
+			// 
+			// removeButton
+			// 
+			this.removeButton.Image = ((System.Drawing.Image)(resources.GetObject("removeButton.Image")));
+			this.removeButton.Location = new System.Drawing.Point(9, 115);
+			this.removeButton.Name = "removeButton";
+			this.removeButton.Size = new System.Drawing.Size(55, 49);
+			this.removeButton.TabIndex = 1;
+			this.removeButton.UseVisualStyleBackColor = true;
+			// 
+			// moveDownButton
+			// 
+			this.moveDownButton.Image = ((System.Drawing.Image)(resources.GetObject("moveDownButton.Image")));
+			this.moveDownButton.Location = new System.Drawing.Point(9, 193);
+			this.moveDownButton.Name = "moveDownButton";
+			this.moveDownButton.Size = new System.Drawing.Size(55, 43);
+			this.moveDownButton.TabIndex = 2;
+			this.moveDownButton.UseVisualStyleBackColor = true;
+			// 
+			// searchTypeDropDown
+			// 
+			this.searchTypeDropDown.FormattingEnabled = true;
+			this.searchTypeDropDown.Items.AddRange(new object[] {
+            "Song",
+            "Artist",
+            "Genre"});
+			this.searchTypeDropDown.Location = new System.Drawing.Point(553, 81);
+			this.searchTypeDropDown.Name = "searchTypeDropDown";
+			this.searchTypeDropDown.Size = new System.Drawing.Size(121, 21);
+			this.searchTypeDropDown.TabIndex = 22;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.searchTypeDropDown);
+			this.Controls.Add(this.editPlaylistBox);
+			this.Controls.Add(this.songSearchTextBox);
+			this.Controls.Add(this.searchBackground);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.editChannelButton);
 			this.Controls.Add(this.playlistSearchTextBox);
 			this.Controls.Add(this.playlistSearchButton);
@@ -273,6 +372,7 @@
 			this.Text = "JukeBox Jam";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.playlistViewBox)).EndInit();
+			this.editPlaylistBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -298,6 +398,14 @@
 		private System.Windows.Forms.Button playlistSearchButton;
 		private System.Windows.Forms.TextBox playlistSearchTextBox;
 		private System.Windows.Forms.Button editChannelButton;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.RichTextBox searchBackground;
+		private System.Windows.Forms.TextBox songSearchTextBox;
+		private System.Windows.Forms.GroupBox editPlaylistBox;
+		private System.Windows.Forms.Button moveDownButton;
+		private System.Windows.Forms.Button removeButton;
+		private System.Windows.Forms.Button moveUpButton;
+		private System.Windows.Forms.ComboBox searchTypeDropDown;
 	}
 }
 

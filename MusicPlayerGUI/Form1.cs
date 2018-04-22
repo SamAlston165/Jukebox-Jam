@@ -62,7 +62,7 @@ namespace MusicPlayerGUI
             //playlistSearch = new PlaylistSearch();
             trackSearch = new DBSearch(trackHost, trackPort);
 
-            this.richTextBox1.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
+            this.songInfoBox.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
         }
         /*
          To define the chat functionality we need to gather the text from the current rich texbtox when the send button is clicked and then append it to the upper
@@ -71,10 +71,10 @@ namespace MusicPlayerGUI
              */
         private void btnSend_Click(object sender, EventArgs e)
         {
-            this.richTextBox2.Text += Environment.NewLine + "User: " + this.richTextBox3.Text;
-            this.richTextBox3.Text = "";
+            this.chatFeedBox.Text += Environment.NewLine + "User: " + this.chatTextEntryBox.Text;
+            this.chatTextEntryBox.Text = "";
 
-            chatSender.SendMessage(richTextBox3.Text);
+            chatSender.SendMessage(chatTextEntryBox.Text);
         }
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

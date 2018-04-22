@@ -28,242 +28,276 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Items.AddRange(new object[] {
+			this.channelBox = new System.Windows.Forms.ListBox();
+			this.songInfoBox = new System.Windows.Forms.RichTextBox();
+			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+			this.label1 = new System.Windows.Forms.Label();
+			this.chatFeedBox = new System.Windows.Forms.RichTextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.chatTextEntryBox = new System.Windows.Forms.RichTextBox();
+			this.sendButton = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.nextButton = new System.Windows.Forms.Button();
+			this.stopButton = new System.Windows.Forms.Button();
+			this.pauseButton = new System.Windows.Forms.Button();
+			this.playButton = new System.Windows.Forms.Button();
+			this.previousButton = new System.Windows.Forms.Button();
+			this.playlistViewBox = new System.Windows.Forms.DataGridView();
+			this.playlistSearchButton = new System.Windows.Forms.Button();
+			this.playlistSearchTextBox = new System.Windows.Forms.TextBox();
+			this.editChannelButton = new System.Windows.Forms.Button();
+			((System.ComponentModel.ISupportInitialize)(this.playlistViewBox)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// channelBox
+			// 
+			this.channelBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.channelBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.channelBox.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.channelBox.FormattingEnabled = true;
+			this.channelBox.ItemHeight = 15;
+			this.channelBox.Items.AddRange(new object[] {
             "+ Channel 1",
             "+ Channel 2",
             "+ Channel 3",
             "+ Channel 4",
             "+ Channel 5"});
-            this.listBox1.Location = new System.Drawing.Point(0, 31);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 300);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 332);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(120, 117);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Channels";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Location = new System.Drawing.Point(684, 31);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(117, 300);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(716, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Chat";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox3.Location = new System.Drawing.Point(684, 332);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(120, 85);
-            this.richTextBox3.TabIndex = 5;
-            this.richTextBox3.Text = "";
-            this.richTextBox3.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
-            // 
-            // btnSend
-            // 
-            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSend.Location = new System.Drawing.Point(684, 415);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(117, 34);
-            this.btnSend.TabIndex = 6;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(361, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 25);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Playlist";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.nextTrackButton_BackgroundImage;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Location = new System.Drawing.Point(579, 356);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(70, 70);
-            this.button5.TabIndex = 12;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.stopButton_BackgroundImage;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Location = new System.Drawing.Point(472, 356);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(70, 70);
-            this.button4.TabIndex = 11;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.pauseButton_BackgroundImage;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(365, 356);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 70);
-            this.button3.TabIndex = 10;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.playButton_BackgroundImage;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(259, 356);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 70);
-            this.button2.TabIndex = 9;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.prevTrackButton_BackgroundImage;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(148, 356);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 70);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(126, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(552, 300);
-            this.dataGridView1.TabIndex = 13;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.listBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MinimumSize = new System.Drawing.Size(820, 493);
-            this.Name = "Form1";
-            this.Text = "JukeBox Jam";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.channelBox.Location = new System.Drawing.Point(0, 31);
+			this.channelBox.Name = "channelBox";
+			this.channelBox.Size = new System.Drawing.Size(120, 300);
+			this.channelBox.TabIndex = 0;
+			this.channelBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+			// 
+			// songInfoBox
+			// 
+			this.songInfoBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.songInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.songInfoBox.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.songInfoBox.Location = new System.Drawing.Point(0, 332);
+			this.songInfoBox.Name = "songInfoBox";
+			this.songInfoBox.ReadOnly = true;
+			this.songInfoBox.Size = new System.Drawing.Size(120, 117);
+			this.songInfoBox.TabIndex = 1;
+			this.songInfoBox.Text = "";
+			this.songInfoBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(4, 3);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(109, 25);
+			this.label1.TabIndex = 2;
+			this.label1.Text = "Channels";
+			// 
+			// chatFeedBox
+			// 
+			this.chatFeedBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.chatFeedBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.chatFeedBox.Location = new System.Drawing.Point(684, 31);
+			this.chatFeedBox.Name = "chatFeedBox";
+			this.chatFeedBox.Size = new System.Drawing.Size(117, 300);
+			this.chatFeedBox.TabIndex = 3;
+			this.chatFeedBox.Text = "";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(716, 3);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(60, 25);
+			this.label2.TabIndex = 4;
+			this.label2.Text = "Chat";
+			// 
+			// chatTextEntryBox
+			// 
+			this.chatTextEntryBox.BackColor = System.Drawing.SystemColors.HighlightText;
+			this.chatTextEntryBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.chatTextEntryBox.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.chatTextEntryBox.Location = new System.Drawing.Point(684, 332);
+			this.chatTextEntryBox.Name = "chatTextEntryBox";
+			this.chatTextEntryBox.Size = new System.Drawing.Size(120, 85);
+			this.chatTextEntryBox.TabIndex = 5;
+			this.chatTextEntryBox.Text = "";
+			this.chatTextEntryBox.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
+			// 
+			// sendButton
+			// 
+			this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.sendButton.Location = new System.Drawing.Point(684, 415);
+			this.sendButton.Name = "sendButton";
+			this.sendButton.Size = new System.Drawing.Size(117, 34);
+			this.sendButton.TabIndex = 6;
+			this.sendButton.Text = "Send";
+			this.sendButton.UseVisualStyleBackColor = true;
+			this.sendButton.Click += new System.EventHandler(this.btnSend_Click);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(361, 3);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(89, 25);
+			this.label3.TabIndex = 7;
+			this.label3.Text = "Playlist";
+			// 
+			// nextButton
+			// 
+			this.nextButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.nextButton.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.nextTrackButton_BackgroundImage;
+			this.nextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.nextButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+			this.nextButton.Location = new System.Drawing.Point(579, 356);
+			this.nextButton.Name = "nextButton";
+			this.nextButton.Size = new System.Drawing.Size(70, 70);
+			this.nextButton.TabIndex = 12;
+			this.nextButton.UseVisualStyleBackColor = false;
+			// 
+			// stopButton
+			// 
+			this.stopButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.stopButton.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.stopButton_BackgroundImage;
+			this.stopButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.stopButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+			this.stopButton.Location = new System.Drawing.Point(264, 356);
+			this.stopButton.Name = "stopButton";
+			this.stopButton.Size = new System.Drawing.Size(70, 70);
+			this.stopButton.TabIndex = 11;
+			this.stopButton.UseVisualStyleBackColor = false;
+			// 
+			// pauseButton
+			// 
+			this.pauseButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.pauseButton.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.pauseButton_BackgroundImage;
+			this.pauseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.pauseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.pauseButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+			this.pauseButton.Location = new System.Drawing.Point(470, 356);
+			this.pauseButton.Name = "pauseButton";
+			this.pauseButton.Size = new System.Drawing.Size(70, 70);
+			this.pauseButton.TabIndex = 10;
+			this.pauseButton.UseVisualStyleBackColor = false;
+			// 
+			// playButton
+			// 
+			this.playButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.playButton.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.playButton_BackgroundImage;
+			this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.playButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+			this.playButton.Location = new System.Drawing.Point(366, 356);
+			this.playButton.Name = "playButton";
+			this.playButton.Size = new System.Drawing.Size(70, 70);
+			this.playButton.TabIndex = 9;
+			this.playButton.UseVisualStyleBackColor = false;
+			// 
+			// previousButton
+			// 
+			this.previousButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.previousButton.BackgroundImage = global::MusicPlayerGUI.Properties.Resources.prevTrackButton_BackgroundImage;
+			this.previousButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.previousButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+			this.previousButton.Location = new System.Drawing.Point(148, 356);
+			this.previousButton.Name = "previousButton";
+			this.previousButton.Size = new System.Drawing.Size(70, 70);
+			this.previousButton.TabIndex = 8;
+			this.previousButton.UseVisualStyleBackColor = false;
+			// 
+			// playlistViewBox
+			// 
+			this.playlistViewBox.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+			this.playlistViewBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.playlistViewBox.Location = new System.Drawing.Point(126, 31);
+			this.playlistViewBox.Name = "playlistViewBox";
+			this.playlistViewBox.Size = new System.Drawing.Size(552, 300);
+			this.playlistViewBox.TabIndex = 13;
+			// 
+			// playlistSearchButton
+			// 
+			this.playlistSearchButton.Location = new System.Drawing.Point(470, 289);
+			this.playlistSearchButton.Name = "playlistSearchButton";
+			this.playlistSearchButton.Size = new System.Drawing.Size(75, 20);
+			this.playlistSearchButton.TabIndex = 14;
+			this.playlistSearchButton.Text = "Search";
+			this.playlistSearchButton.UseVisualStyleBackColor = true;
+			// 
+			// playlistSearchTextBox
+			// 
+			this.playlistSearchTextBox.Location = new System.Drawing.Point(269, 289);
+			this.playlistSearchTextBox.Name = "playlistSearchTextBox";
+			this.playlistSearchTextBox.Size = new System.Drawing.Size(181, 20);
+			this.playlistSearchTextBox.TabIndex = 15;
+			// 
+			// editChannelButton
+			// 
+			this.editChannelButton.Location = new System.Drawing.Point(12, 288);
+			this.editChannelButton.Name = "editChannelButton";
+			this.editChannelButton.Size = new System.Drawing.Size(75, 23);
+			this.editChannelButton.TabIndex = 16;
+			this.editChannelButton.Text = "Edit";
+			this.editChannelButton.UseVisualStyleBackColor = true;
+			// 
+			// Form1
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.editChannelButton);
+			this.Controls.Add(this.playlistSearchTextBox);
+			this.Controls.Add(this.playlistSearchButton);
+			this.Controls.Add(this.playlistViewBox);
+			this.Controls.Add(this.nextButton);
+			this.Controls.Add(this.stopButton);
+			this.Controls.Add(this.pauseButton);
+			this.Controls.Add(this.playButton);
+			this.Controls.Add(this.previousButton);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.sendButton);
+			this.Controls.Add(this.chatTextEntryBox);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.chatFeedBox);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.songInfoBox);
+			this.Controls.Add(this.channelBox);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.MinimumSize = new System.Drawing.Size(820, 493);
+			this.Name = "Form1";
+			this.Text = "JukeBox Jam";
+			this.Load += new System.EventHandler(this.Form1_Load);
+			((System.ComponentModel.ISupportInitialize)(this.playlistViewBox)).EndInit();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ListBox channelBox;
+        private System.Windows.Forms.RichTextBox songInfoBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox chatFeedBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.RichTextBox chatTextEntryBox;
+        private System.Windows.Forms.Button sendButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-    }
+        private System.Windows.Forms.Button previousButton;
+        private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.Button pauseButton;
+        private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.DataGridView playlistViewBox;
+		private System.Windows.Forms.Button playlistSearchButton;
+		private System.Windows.Forms.TextBox playlistSearchTextBox;
+		private System.Windows.Forms.Button editChannelButton;
+	}
 }
 

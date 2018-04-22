@@ -43,7 +43,6 @@
 			this.pauseButton = new System.Windows.Forms.Button();
 			this.playButton = new System.Windows.Forms.Button();
 			this.previousButton = new System.Windows.Forms.Button();
-			this.playlistViewBox = new System.Windows.Forms.DataGridView();
 			this.playlistSearchButton = new System.Windows.Forms.Button();
 			this.playlistSearchTextBox = new System.Windows.Forms.TextBox();
 			this.editChannelButton = new System.Windows.Forms.Button();
@@ -55,7 +54,9 @@
 			this.removeButton = new System.Windows.Forms.Button();
 			this.moveDownButton = new System.Windows.Forms.Button();
 			this.searchTypeDropDown = new System.Windows.Forms.ComboBox();
-			((System.ComponentModel.ISupportInitialize)(this.playlistViewBox)).BeginInit();
+			this.playlistBox = new System.Windows.Forms.ListBox();
+			this.searchResultsBox = new System.Windows.Forms.ListView();
+			this.addToPlaylistButton = new System.Windows.Forms.Button();
 			this.editPlaylistBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -220,29 +221,20 @@
 			this.previousButton.TabIndex = 8;
 			this.previousButton.UseVisualStyleBackColor = false;
 			// 
-			// playlistViewBox
-			// 
-			this.playlistViewBox.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-			this.playlistViewBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.playlistViewBox.Location = new System.Drawing.Point(126, 31);
-			this.playlistViewBox.Name = "playlistViewBox";
-			this.playlistViewBox.Size = new System.Drawing.Size(414, 300);
-			this.playlistViewBox.TabIndex = 13;
-			this.playlistViewBox.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.playlistViewBox_CellContentClick);
-			// 
 			// playlistSearchButton
 			// 
 			this.playlistSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.playlistSearchButton.Location = new System.Drawing.Point(348, 45);
+			this.playlistSearchButton.Location = new System.Drawing.Point(324, 45);
 			this.playlistSearchButton.Name = "playlistSearchButton";
 			this.playlistSearchButton.Size = new System.Drawing.Size(75, 20);
 			this.playlistSearchButton.TabIndex = 14;
 			this.playlistSearchButton.Text = "Search";
 			this.playlistSearchButton.UseVisualStyleBackColor = true;
+			this.playlistSearchButton.Click += new System.EventHandler(this.playlistSearchButton_Click);
 			// 
 			// playlistSearchTextBox
 			// 
-			this.playlistSearchTextBox.Location = new System.Drawing.Point(153, 45);
+			this.playlistSearchTextBox.Location = new System.Drawing.Point(137, 46);
 			this.playlistSearchTextBox.Name = "playlistSearchTextBox";
 			this.playlistSearchTextBox.Size = new System.Drawing.Size(181, 20);
 			this.playlistSearchTextBox.TabIndex = 15;
@@ -338,21 +330,49 @@
 			this.searchTypeDropDown.Size = new System.Drawing.Size(121, 21);
 			this.searchTypeDropDown.TabIndex = 22;
 			// 
+			// playlistBox
+			// 
+			this.playlistBox.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.playlistBox.FormattingEnabled = true;
+			this.playlistBox.Location = new System.Drawing.Point(126, 31);
+			this.playlistBox.Name = "playlistBox";
+			this.playlistBox.Size = new System.Drawing.Size(414, 303);
+			this.playlistBox.TabIndex = 23;
+			// 
+			// searchResultsBox
+			// 
+			this.searchResultsBox.Location = new System.Drawing.Point(552, 113);
+			this.searchResultsBox.Name = "searchResultsBox";
+			this.searchResultsBox.Size = new System.Drawing.Size(121, 97);
+			this.searchResultsBox.TabIndex = 3;
+			this.searchResultsBox.UseCompatibleStateImageBehavior = false;
+			// 
+			// addToPlaylistButton
+			// 
+			this.addToPlaylistButton.Location = new System.Drawing.Point(573, 216);
+			this.addToPlaylistButton.Name = "addToPlaylistButton";
+			this.addToPlaylistButton.Size = new System.Drawing.Size(75, 23);
+			this.addToPlaylistButton.TabIndex = 24;
+			this.addToPlaylistButton.Text = "Add";
+			this.addToPlaylistButton.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.searchTypeDropDown);
+			this.Controls.Add(this.addToPlaylistButton);
+			this.Controls.Add(this.searchResultsBox);
 			this.Controls.Add(this.editPlaylistBox);
+			this.Controls.Add(this.playlistSearchButton);
+			this.Controls.Add(this.playlistSearchTextBox);
+			this.Controls.Add(this.playlistBox);
+			this.Controls.Add(this.searchTypeDropDown);
 			this.Controls.Add(this.songSearchTextBox);
 			this.Controls.Add(this.searchBackground);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.editChannelButton);
-			this.Controls.Add(this.playlistSearchTextBox);
-			this.Controls.Add(this.playlistSearchButton);
-			this.Controls.Add(this.playlistViewBox);
 			this.Controls.Add(this.nextButton);
 			this.Controls.Add(this.stopButton);
 			this.Controls.Add(this.pauseButton);
@@ -371,7 +391,6 @@
 			this.Name = "Form1";
 			this.Text = "JukeBox Jam";
 			this.Load += new System.EventHandler(this.Form1_Load);
-			((System.ComponentModel.ISupportInitialize)(this.playlistViewBox)).EndInit();
 			this.editPlaylistBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -394,7 +413,6 @@
         private System.Windows.Forms.Button pauseButton;
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button nextButton;
-        private System.Windows.Forms.DataGridView playlistViewBox;
 		private System.Windows.Forms.Button playlistSearchButton;
 		private System.Windows.Forms.TextBox playlistSearchTextBox;
 		private System.Windows.Forms.Button editChannelButton;
@@ -406,6 +424,9 @@
 		private System.Windows.Forms.Button removeButton;
 		private System.Windows.Forms.Button moveUpButton;
 		private System.Windows.Forms.ComboBox searchTypeDropDown;
+		private System.Windows.Forms.ListBox playlistBox;
+		private System.Windows.Forms.ListView searchResultsBox;
+		private System.Windows.Forms.Button addToPlaylistButton;
 	}
 }
 

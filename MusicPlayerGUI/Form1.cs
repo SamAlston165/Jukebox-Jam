@@ -101,5 +101,10 @@ namespace MusicPlayerGUI
 		{
 
 		}
+
+		private void playlistSearchButton_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -200,6 +200,7 @@
 			this.playButton.Size = new System.Drawing.Size(70, 70);
 			this.playButton.TabIndex = 9;
 			this.playButton.UseVisualStyleBackColor = false;
+			this.playButton.Click += new System.EventHandler(this.playButton_Click);
 			// 
 			// previousButton
 			// 

@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using Track;
 using User;
 using Views;
+using System.Net;
 
 namespace MusicPlayerGUI
 {
@@ -109,9 +110,32 @@ namespace MusicPlayerGUI
 
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
-			String URL = "http://convertimage.net/frontframe/images/cute_ball_info.png";
-			pictureBox1.ImageLocation = URL;
+			
+
 		}
-		
+
+		private void playButton_Click(object sender, EventArgs e)
+		{
+			//query this string to our server
+			/*String queryURL = $"http://159.65.235.100/covers/{currentTrack.artist}/{currentTrack.album}";*/
+
+			//make http request to queryURL
+			//HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
+			HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/asia/asia");
+			//response from queryURL is a string which is the imageURL
+			HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
+			// Insert code that uses the response object.
+			WebHeaderCollection header = HttpWResp.Headers;
+			string responseText = string.Empty;
+			var encoding = ASCIIEncoding.ASCII;
+			using (var reader = new System.IO.StreamReader(HttpWResp.GetResponseStream(), encoding))
+			{
+				responseText = reader.ReadToEnd();
+			}
+
+			Console.WriteLine(responseText);
+			//update picture box based on new url
+			pictureBox1.ImageLocation = responseText;
+		}
 	}
 }

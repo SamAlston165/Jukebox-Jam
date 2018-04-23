@@ -30,7 +30,6 @@
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.channelBox = new System.Windows.Forms.ListBox();
-			this.songInfoBox = new System.Windows.Forms.RichTextBox();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.label1 = new System.Windows.Forms.Label();
 			this.chatFeedBox = new System.Windows.Forms.RichTextBox();
@@ -57,7 +56,14 @@
 			this.playlistBox = new System.Windows.Forms.ListBox();
 			this.searchResultsBox = new System.Windows.Forms.ListView();
 			this.addToPlaylistButton = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.userNameTextBox = new System.Windows.Forms.TextBox();
+			this.passwordTextBox = new System.Windows.Forms.TextBox();
+			this.logInButton = new System.Windows.Forms.Button();
+			this.usernameLabel = new System.Windows.Forms.Label();
+			this.passwordLabel = new System.Windows.Forms.Label();
 			this.editPlaylistBox.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// channelBox
@@ -79,19 +85,6 @@
 			this.channelBox.TabIndex = 0;
 			this.channelBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
-			// songInfoBox
-			// 
-			this.songInfoBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.songInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.songInfoBox.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.songInfoBox.Location = new System.Drawing.Point(0, 332);
-			this.songInfoBox.Name = "songInfoBox";
-			this.songInfoBox.ReadOnly = true;
-			this.songInfoBox.Size = new System.Drawing.Size(120, 117);
-			this.songInfoBox.TabIndex = 1;
-			this.songInfoBox.Text = "";
-			this.songInfoBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -108,7 +101,7 @@
 			this.chatFeedBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.chatFeedBox.Location = new System.Drawing.Point(684, 31);
 			this.chatFeedBox.Name = "chatFeedBox";
-			this.chatFeedBox.Size = new System.Drawing.Size(117, 300);
+			this.chatFeedBox.Size = new System.Drawing.Size(117, 179);
 			this.chatFeedBox.TabIndex = 3;
 			this.chatFeedBox.Text = "";
 			// 
@@ -127,9 +120,9 @@
 			this.chatTextEntryBox.BackColor = System.Drawing.SystemColors.HighlightText;
 			this.chatTextEntryBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.chatTextEntryBox.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chatTextEntryBox.Location = new System.Drawing.Point(684, 332);
+			this.chatTextEntryBox.Location = new System.Drawing.Point(684, 206);
 			this.chatTextEntryBox.Name = "chatTextEntryBox";
-			this.chatTextEntryBox.Size = new System.Drawing.Size(120, 85);
+			this.chatTextEntryBox.Size = new System.Drawing.Size(117, 85);
 			this.chatTextEntryBox.TabIndex = 5;
 			this.chatTextEntryBox.Text = "";
 			this.chatTextEntryBox.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
@@ -138,9 +131,9 @@
 			// 
 			this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.sendButton.Location = new System.Drawing.Point(684, 415);
+			this.sendButton.Location = new System.Drawing.Point(684, 297);
 			this.sendButton.Name = "sendButton";
-			this.sendButton.Size = new System.Drawing.Size(117, 34);
+			this.sendButton.Size = new System.Drawing.Size(104, 34);
 			this.sendButton.TabIndex = 6;
 			this.sendButton.Text = "Send";
 			this.sendButton.UseVisualStyleBackColor = true;
@@ -356,12 +349,69 @@
 			this.addToPlaylistButton.Text = "Add";
 			this.addToPlaylistButton.UseVisualStyleBackColor = true;
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.pictureBox1.Location = new System.Drawing.Point(0, 331);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(120, 118);
+			this.pictureBox1.TabIndex = 25;
+			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+			// 
+			// userNameTextBox
+			// 
+			this.userNameTextBox.Location = new System.Drawing.Point(684, 356);
+			this.userNameTextBox.Name = "userNameTextBox";
+			this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
+			this.userNameTextBox.TabIndex = 26;
+			// 
+			// passwordTextBox
+			// 
+			this.passwordTextBox.Location = new System.Drawing.Point(684, 396);
+			this.passwordTextBox.Name = "passwordTextBox";
+			this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
+			this.passwordTextBox.TabIndex = 27;
+			// 
+			// logInButton
+			// 
+			this.logInButton.Location = new System.Drawing.Point(701, 422);
+			this.logInButton.Name = "logInButton";
+			this.logInButton.Size = new System.Drawing.Size(75, 23);
+			this.logInButton.TabIndex = 28;
+			this.logInButton.Text = "Log in";
+			this.logInButton.UseVisualStyleBackColor = true;
+			// 
+			// usernameLabel
+			// 
+			this.usernameLabel.AutoSize = true;
+			this.usernameLabel.Location = new System.Drawing.Point(707, 340);
+			this.usernameLabel.Name = "usernameLabel";
+			this.usernameLabel.Size = new System.Drawing.Size(58, 13);
+			this.usernameLabel.TabIndex = 29;
+			this.usernameLabel.Text = "Username:";
+			// 
+			// passwordLabel
+			// 
+			this.passwordLabel.AutoSize = true;
+			this.passwordLabel.Location = new System.Drawing.Point(707, 379);
+			this.passwordLabel.Name = "passwordLabel";
+			this.passwordLabel.Size = new System.Drawing.Size(56, 13);
+			this.passwordLabel.TabIndex = 30;
+			this.passwordLabel.Text = "Password:";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.passwordLabel);
+			this.Controls.Add(this.usernameLabel);
+			this.Controls.Add(this.logInButton);
+			this.Controls.Add(this.passwordTextBox);
+			this.Controls.Add(this.userNameTextBox);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.addToPlaylistButton);
 			this.Controls.Add(this.searchResultsBox);
 			this.Controls.Add(this.editPlaylistBox);
@@ -384,7 +434,6 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.chatFeedBox);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.songInfoBox);
 			this.Controls.Add(this.channelBox);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.MinimumSize = new System.Drawing.Size(820, 493);
@@ -392,6 +441,7 @@
 			this.Text = "JukeBox Jam";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.editPlaylistBox.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -400,7 +450,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox channelBox;
-        private System.Windows.Forms.RichTextBox songInfoBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox chatFeedBox;
@@ -427,6 +476,12 @@
 		private System.Windows.Forms.ListBox playlistBox;
 		private System.Windows.Forms.ListView searchResultsBox;
 		private System.Windows.Forms.Button addToPlaylistButton;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.TextBox userNameTextBox;
+		private System.Windows.Forms.TextBox passwordTextBox;
+		private System.Windows.Forms.Button logInButton;
+		private System.Windows.Forms.Label usernameLabel;
+		private System.Windows.Forms.Label passwordLabel;
 	}
 }
 

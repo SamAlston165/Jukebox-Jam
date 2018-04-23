@@ -62,7 +62,7 @@ namespace MusicPlayerGUI
             //playlistSearch = new PlaylistSearch();
             trackSearch = new DBSearch(trackHost, trackPort);
 
-            this.songInfoBox.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
+            //this.songInfoBox.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
         }
         /*
          To define the chat functionality we need to gather the text from the current rich texbtox when the send button is clicked and then append it to the upper
@@ -106,5 +106,12 @@ namespace MusicPlayerGUI
 		{
 
 		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+			String URL = "http://convertimage.net/frontframe/images/cute_ball_info.png";
+			pictureBox1.ImageLocation = URL;
+		}
+		
 	}
 }

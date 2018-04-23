@@ -1,7 +1,9 @@
 ﻿using Audio;
 using Chat;
 using Interfaces;
+using Newtonsoft.Json;
 using Playlist;
+using Quobject.SocketIoClientDotNet.Client;
 using Search;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,7 @@ namespace MusicPlayerGUI
     public partial class Form1 : Form
     {
         private ILogin login;
-
+        public delegate void UpdateTextBoxMethod(string text);
         private IUser user;
         private IChatSender chatSender;
         private IChatReceiver chatReceiver;
@@ -51,7 +53,7 @@ namespace MusicPlayerGUI
 
             //user = login.AuthorizeUser("username", "password");
             user = new AUser("");
-            chatSender = new ChatSender(user);
+          //  chatSender = new ChatSender(user);
             chatReceiver = new ChatReceiver();
 
             activePlaylist = new ActivePlaylist(new APlaylist());
@@ -62,7 +64,7 @@ namespace MusicPlayerGUI
             //playlistSearch = new PlaylistSearch();
             trackSearch = new DBSearch(trackHost, trackPort);
 
-            //this.songInfoBox.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
+            this.songInfoBox.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
         }
         /*
          To define the chat functionality we need to gather the text from the current rich texbtox when the send button is clicked and then append it to the upper
@@ -71,10 +73,46 @@ namespace MusicPlayerGUI
              */
         private void btnSend_Click(object sender, EventArgs e)
         {
-            this.chatFeedBox.Text += Environment.NewLine + "User: " + this.chatTextEntryBox.Text;
-            this.chatTextEntryBox.Text = "";
+            // chatSender.SendMessage(chatTextEntryBox.Text);
+            // this.chatFeedBox.Text += Environment.NewLine + "User: " + this.chatTextEntryBox.Text;
+            // this.chatTextEntryBox.Text = "";
 
-            chatSender.SendMessage(chatTextEntryBox.Text);
+            chatManager();
+        }
+
+        private void chatManager()
+        {
+            var socket = IO.Socket("http://159.65.235.100:6024");
+
+            socket.On(Socket.EVENT_CONNECT, () =>
+                {
+
+                });
+
+            socket.On("chat", (data) =>
+            {
+                var messages = new { messages = "" };
+                var messageVal = JsonConvert.DeserializeAnonymousType((string)data,messages);
+                updateMessages((string)messages.messages);
+            });
+        }
+
+        private void updateMessages(string text)
+        {
+            if(this.chatFeedBox.InvokeRequired)
+            {
+                UpdateTextBoxMethod del = new UpdateTextBoxMethod(updateMessages);
+                this.Invoke(del, new object[] { text });
+            }
+            else
+            {
+                this.chatFeedBox.Text = text;
+            }
+        }
+       
+        private void updateStatus()
+        {
+
         }
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -106,12 +144,5 @@ namespace MusicPlayerGUI
 		{
 
 		}
-
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
-			String URL = "http://convertimage.net/frontframe/images/cute_ball_info.png";
-			pictureBox1.ImageLocation = URL;
-		}
-		
 	}
 }

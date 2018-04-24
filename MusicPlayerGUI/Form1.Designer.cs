@@ -97,11 +97,11 @@
 			// 
 			// chatFeedBox
 			// 
-			this.chatFeedBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.chatFeedBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.chatFeedBox.BackColor = System.Drawing.SystemColors.Window;
+			this.chatFeedBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.chatFeedBox.Location = new System.Drawing.Point(684, 31);
 			this.chatFeedBox.Name = "chatFeedBox";
-			this.chatFeedBox.Size = new System.Drawing.Size(117, 179);
+			this.chatFeedBox.Size = new System.Drawing.Size(104, 179);
 			this.chatFeedBox.TabIndex = 3;
 			this.chatFeedBox.Text = "";
 			// 
@@ -117,18 +117,19 @@
 			// 
 			// chatTextEntryBox
 			// 
-			this.chatTextEntryBox.BackColor = System.Drawing.SystemColors.HighlightText;
-			this.chatTextEntryBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.chatTextEntryBox.BackColor = System.Drawing.SystemColors.Info;
+			this.chatTextEntryBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.chatTextEntryBox.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.chatTextEntryBox.Location = new System.Drawing.Point(684, 206);
 			this.chatTextEntryBox.Name = "chatTextEntryBox";
-			this.chatTextEntryBox.Size = new System.Drawing.Size(117, 85);
+			this.chatTextEntryBox.Size = new System.Drawing.Size(104, 85);
 			this.chatTextEntryBox.TabIndex = 5;
 			this.chatTextEntryBox.Text = "";
 			this.chatTextEntryBox.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
 			// 
 			// sendButton
 			// 
+			this.sendButton.BackColor = System.Drawing.SystemColors.ButtonFace;
 			this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.sendButton.Location = new System.Drawing.Point(684, 297);
@@ -136,7 +137,7 @@
 			this.sendButton.Size = new System.Drawing.Size(104, 34);
 			this.sendButton.TabIndex = 6;
 			this.sendButton.Text = "Send";
-			this.sendButton.UseVisualStyleBackColor = true;
+			this.sendButton.UseVisualStyleBackColor = false;
 			this.sendButton.Click += new System.EventHandler(this.btnSend_Click);
 			// 
 			// label3
@@ -217,13 +218,14 @@
 			// 
 			// playlistSearchButton
 			// 
+			this.playlistSearchButton.BackColor = System.Drawing.SystemColors.ButtonFace;
 			this.playlistSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.playlistSearchButton.Location = new System.Drawing.Point(324, 45);
 			this.playlistSearchButton.Name = "playlistSearchButton";
 			this.playlistSearchButton.Size = new System.Drawing.Size(75, 20);
 			this.playlistSearchButton.TabIndex = 14;
 			this.playlistSearchButton.Text = "Search";
-			this.playlistSearchButton.UseVisualStyleBackColor = true;
+			this.playlistSearchButton.UseVisualStyleBackColor = false;
 			this.playlistSearchButton.Click += new System.EventHandler(this.playlistSearchButton_Click);
 			// 
 			// playlistSearchTextBox
@@ -256,7 +258,7 @@
 			// 
 			// searchBackground
 			// 
-			this.searchBackground.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.searchBackground.BackColor = System.Drawing.SystemColors.MenuHighlight;
 			this.searchBackground.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.searchBackground.Location = new System.Drawing.Point(546, 31);
 			this.searchBackground.Name = "searchBackground";
@@ -273,7 +275,7 @@
 			// 
 			// editPlaylistBox
 			// 
-			this.editPlaylistBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.editPlaylistBox.BackColor = System.Drawing.SystemColors.MenuHighlight;
 			this.editPlaylistBox.Controls.Add(this.moveDownButton);
 			this.editPlaylistBox.Controls.Add(this.removeButton);
 			this.editPlaylistBox.Controls.Add(this.moveUpButton);
@@ -327,7 +329,7 @@
 			// 
 			// playlistBox
 			// 
-			this.playlistBox.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.playlistBox.BackColor = System.Drawing.SystemColors.MenuHighlight;
 			this.playlistBox.FormattingEnabled = true;
 			this.playlistBox.Location = new System.Drawing.Point(126, 31);
 			this.playlistBox.Name = "playlistBox";
@@ -377,12 +379,13 @@
 			// 
 			// logInButton
 			// 
+			this.logInButton.BackColor = System.Drawing.SystemColors.ButtonFace;
 			this.logInButton.Location = new System.Drawing.Point(701, 422);
 			this.logInButton.Name = "logInButton";
 			this.logInButton.Size = new System.Drawing.Size(75, 23);
 			this.logInButton.TabIndex = 28;
 			this.logInButton.Text = "Log in";
-			this.logInButton.UseVisualStyleBackColor = true;
+			this.logInButton.UseVisualStyleBackColor = false;
 			// 
 			// usernameLabel
 			// 

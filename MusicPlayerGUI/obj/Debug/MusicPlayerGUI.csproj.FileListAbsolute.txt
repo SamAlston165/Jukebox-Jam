@@ -132,3 +132,47 @@ C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\Music
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.CoreCompileInputs.cache
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe.config
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Collections.Specialized.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.NameResolution.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Security.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Sockets.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Track.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Views.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\WebSocket4Net.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.dll.config
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Track.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Views.pdb
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.xml
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csprojResolveAssemblyReference.cache
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Form1.resources
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Properties.Resources.resources
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.GenerateResource.Cache
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe
+C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.pdb

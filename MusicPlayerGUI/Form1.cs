@@ -264,6 +264,7 @@ namespace MusicPlayerGUI
 
         private void moveUpButton_Click(object sender, EventArgs e)
         {
+
             ITrack selectedTrack = (ITrack)playlistBox.SelectedItem;
             if (selectedTrack != null)
             {
@@ -348,12 +349,6 @@ namespace MusicPlayerGUI
 
         private void previousButton_Click(object sender, EventArgs e)
         {
-			previousButton.TabStop = false;
-			previousButton.FlatStyle = FlatStyle.Flat;
-			previousButton.FlatAppearance.BorderSize = 0;
-			previousButton.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent
-
-
 			bool trackIsNotFirst = playlist.PreviousTrack();
             if (trackIsNotFirst)
             {

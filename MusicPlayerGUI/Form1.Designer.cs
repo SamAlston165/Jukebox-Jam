@@ -49,9 +49,9 @@
 			this.searchBackground = new System.Windows.Forms.RichTextBox();
 			this.songSearchTextBox = new System.Windows.Forms.TextBox();
 			this.editPlaylistBox = new System.Windows.Forms.GroupBox();
-			this.moveUpButton = new System.Windows.Forms.Button();
-			this.removeButton = new System.Windows.Forms.Button();
 			this.moveDownButton = new System.Windows.Forms.Button();
+			this.removeButton = new System.Windows.Forms.Button();
+			this.moveUpButton = new System.Windows.Forms.Button();
 			this.searchTypeDropDown = new System.Windows.Forms.ComboBox();
 			this.playlistBox = new System.Windows.Forms.ListBox();
 			this.searchResultsBox = new System.Windows.Forms.ListView();
@@ -285,14 +285,14 @@
 			this.editPlaylistBox.TabStop = false;
 			this.editPlaylistBox.Text = "Edit Playlist";
 			// 
-			// moveUpButton
+			// moveDownButton
 			// 
-			this.moveUpButton.Image = ((System.Drawing.Image)(resources.GetObject("moveUpButton.Image")));
-			this.moveUpButton.Location = new System.Drawing.Point(9, 47);
-			this.moveUpButton.Name = "moveUpButton";
-			this.moveUpButton.Size = new System.Drawing.Size(55, 41);
-			this.moveUpButton.TabIndex = 0;
-			this.moveUpButton.UseVisualStyleBackColor = true;
+			this.moveDownButton.Image = ((System.Drawing.Image)(resources.GetObject("moveDownButton.Image")));
+			this.moveDownButton.Location = new System.Drawing.Point(9, 193);
+			this.moveDownButton.Name = "moveDownButton";
+			this.moveDownButton.Size = new System.Drawing.Size(55, 43);
+			this.moveDownButton.TabIndex = 2;
+			this.moveDownButton.UseVisualStyleBackColor = true;
 			// 
 			// removeButton
 			// 
@@ -303,22 +303,23 @@
 			this.removeButton.TabIndex = 1;
 			this.removeButton.UseVisualStyleBackColor = true;
 			// 
-			// moveDownButton
+			// moveUpButton
 			// 
-			this.moveDownButton.Image = ((System.Drawing.Image)(resources.GetObject("moveDownButton.Image")));
-			this.moveDownButton.Location = new System.Drawing.Point(9, 193);
-			this.moveDownButton.Name = "moveDownButton";
-			this.moveDownButton.Size = new System.Drawing.Size(55, 43);
-			this.moveDownButton.TabIndex = 2;
-			this.moveDownButton.UseVisualStyleBackColor = true;
+			this.moveUpButton.Image = ((System.Drawing.Image)(resources.GetObject("moveUpButton.Image")));
+			this.moveUpButton.Location = new System.Drawing.Point(9, 47);
+			this.moveUpButton.Name = "moveUpButton";
+			this.moveUpButton.Size = new System.Drawing.Size(55, 41);
+			this.moveUpButton.TabIndex = 0;
+			this.moveUpButton.UseVisualStyleBackColor = true;
 			// 
 			// searchTypeDropDown
 			// 
 			this.searchTypeDropDown.FormattingEnabled = true;
 			this.searchTypeDropDown.Items.AddRange(new object[] {
-            "Song",
             "Artist",
-            "Genre"});
+            "Title",
+            "Genre",
+            "Year"});
 			this.searchTypeDropDown.Location = new System.Drawing.Point(553, 81);
 			this.searchTypeDropDown.Name = "searchTypeDropDown";
 			this.searchTypeDropDown.Size = new System.Drawing.Size(121, 21);

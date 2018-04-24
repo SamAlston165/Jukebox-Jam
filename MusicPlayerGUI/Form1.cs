@@ -145,7 +145,7 @@ namespace MusicPlayerGUI
 		{
 
 		}
-<<<<<<< HEAD
+
 
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
@@ -159,10 +159,13 @@ namespace MusicPlayerGUI
 			/*String queryURL = $"http://159.65.235.100/covers/{currentTrack.artist}/{currentTrack.album}";*/
 
 			//make http request to queryURL
+
 			//HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
 			HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/asia/asia");
+
 			//response from queryURL is a string which is the imageURL
 			HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
+
 			// Insert code that uses the response object.
 			WebHeaderCollection header = HttpWResp.Headers;
 			string responseText = string.Empty;
@@ -173,10 +176,10 @@ namespace MusicPlayerGUI
 			}
 
 			Console.WriteLine(responseText);
+
 			//update picture box based on new url
 			pictureBox1.ImageLocation = responseText;
 		}
-=======
->>>>>>> 7ad0a1a11763abfce319266b74ef6c5b4aab18af
+
 	}
 }

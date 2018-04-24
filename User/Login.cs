@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace User
     {
         public IUser AuthorizeUser(string username, string password)
         {
-            if (UsernameAndPasswordAreInDatabase(username, password))
+            if (UsernameAndPasswordAreInDatabase(username, password).GetAwaiter().GetResult())
             {
                 return new AUser(username);
             }
@@ -28,9 +29,30 @@ namespace User
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        private bool UsernameAndPasswordAreInDatabase(string username, string password)
+        private async Task<bool> UsernameAndPasswordAreInDatabase(string username, string password)
         {
-            throw new NotImplementedException();
+
+            if(username == "user" && password == "password")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            /*
+            //this code should perform the http requests once server is straightened out
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri("http://localhost:64195");
+            string host = "http://159.65.235.100:6024/user/";
+            HttpResponseMessage x = await client.GetAsync(host + username + "/" + password).ConfigureAwait(false);
+            if (x.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            return false;
+            */
         }
 
         public IUser CreateNewUser(string username, string password)

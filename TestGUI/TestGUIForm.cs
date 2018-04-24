@@ -46,8 +46,8 @@ namespace TestGUI
 
             //user = login.AuthorizeUser("username", "password");
             user = new AUser("");
-            chatSender = new ChatSender(user);
-            chatReceiver = new ChatReceiver();
+            //chatSender = new ChatSender(user);
+            //chatReceiver = new ChatReceiver();
 
             activePlaylist = new ActivePlaylist(new APlaylist());
             audioPlayer = new DBAudioPlayer(new AudioPlayer(), trackHost, trackPort);

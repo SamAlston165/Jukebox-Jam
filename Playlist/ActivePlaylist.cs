@@ -10,7 +10,7 @@ namespace Playlist
 {
     public class ActivePlaylist : IActivePlaylist
     {
-        public ITrack CurrentTrack { get; private set; }
+        public ITrack CurrentTrack { get; set; }
         private IPlaylist playlist;
 
         public ActivePlaylist(IPlaylist playlist)

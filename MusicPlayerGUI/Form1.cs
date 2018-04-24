@@ -23,20 +23,23 @@ namespace MusicPlayerGUI
 {
     public partial class Form1 : Form
     {
+        //chat
         private ILogin login;
-        public delegate void UpdateTextBoxMethod(string text);
         private IUser user;
-        private IChatSender chatSender;
-        private IChatReceiver chatReceiver;
+        //private IChatSender chatSender;
+        //private IChatReceiver chatReceiver;
         private Socket socket;
-        private IActivePlaylist activePlaylist;
-        private IAudioPlayer audioPlayer;
-        private ICurrentTrack currentTrack;
+        public delegate void UpdateTextBoxMethod(string text);
 
+        //playlist
+        private IActivePlaylist playlist;
+        private IAudioPlayer audioPlayer;
+
+        //current track and album art
+        //private ICurrentTrack currentTrack;
         private IImageSearch imageSearch;
 
-        private IPlaylistSearch playlistSearch;
-
+        //search
         private ISearch trackSearch;
 
 
@@ -47,42 +50,49 @@ namespace MusicPlayerGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            socket = IO.Socket("http://159.65.235.100:6024");
-            socket.On(Socket.EVENT_CONNECT, () =>
-            {
-                socket.Emit("chat", (data) =>
-                {
-                    Console.WriteLine("Chat is connected");
-                });
-            });
-
-            socket.On("chat", (data) =>
-            {
-                var messages = new { messages = "" };
-                var messageVal = JsonConvert.DeserializeAnonymousType((string)data, messages);
-                updateMessages((string)messages.messages);
-            });
-
             string trackHost = "http://159.65.235.100";
             int trackPort = 6024;
 
+            //
+            //chat
+            //
+            //InitializeChat();
             login = new Login();
-
-            //user = login.AuthorizeUser("username", "password");
             user = new AUser("");
-          //  chatSender = new ChatSender(user);
-            chatReceiver = new ChatReceiver();
+            //the next line shows how a user will be authenticated
+            //user = login.AuthorizeUser("username", "password");
 
-            activePlaylist = new ActivePlaylist(new APlaylist());
+            //chatSender = new ChatSender(user);
+            //chatReceiver = new ChatReceiver();
+
+            //
+            // playlist
+            //
+            playlist = new ActivePlaylist(new APlaylist());
             audioPlayer = new DBAudioPlayer(new AudioPlayer(), trackHost, trackPort);
-            currentTrack = new CurrentTrack();
 
+            //
+            //current track and album art
+            //
+            //currentTrack = new CurrentTrack();
             //imageSearch = new ImageSearch();
-            //playlistSearch = new PlaylistSearch();
-            trackSearch = new DBSearch(trackHost, trackPort);
 
-           // this.songInfoBox.Text = "Now Playing:" + Environment.NewLine + Environment.NewLine + "Your Song" + Environment.NewLine + "Elton John";
+            //
+            //search
+            //
+            trackSearch = new DBSearch(trackHost, trackPort);
+            SearchAllTracks();
         }
+
+        private void SearchAllTracks()
+        {
+            searchResultsListBox.Items.Clear();
+            foreach (ITrack foundTrack in trackSearch.FindTracks("songs", ""))
+            {
+                searchResultsListBox.Items.Add(foundTrack);
+            }
+        }
+
         /*
          To define the chat functionality we need to gather the text from the current rich texbtox when the send button is clicked and then append it to the upper
          right textbox.
@@ -117,70 +127,232 @@ namespace MusicPlayerGUI
 
         }
 
-		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
+        private void InitializeChat()
+        {
+            socket = IO.Socket("http://159.65.235.100:6024");
+            socket.On(Socket.EVENT_CONNECT, () =>
+            {
+                socket.Emit("chat", (data) =>
+                {
+                    Console.WriteLine("Chat is connected");
+                });
+            });
 
-		}
+            socket.On("chat", (data) =>
+            {
+                var messages = new { messages = "" };
+                var messageVal = JsonConvert.DeserializeAnonymousType((string)data, messages);
+                updateMessages((string)messages.messages);
+            });
+        }
 
-		private void richTextBox1_TextChanged(object sender, EventArgs e)
-		{
+        private void logInButton_Click(object sender, EventArgs e)
+        {
+            user = login.AuthorizeUser(userNameTextBox.Text, passwordTextBox.Text);
+            if(user == null)
+            {
+                loginSuccessOrFailLabel.Text = "login fail";
+            }
+            else
+            {
+                loginSuccessOrFailLabel.Text = "logged in as " + user.Username;
+            }
+        }
 
-		}
+        //
+        //placeholder for showing album art
+        //
+        private void showAlbumArtButton_Click(object sender, EventArgs e)
+        {
+            //query this string to our server
+            /*String queryURL = $"http://159.65.235.100/covers/{currentTrack.artist}/{currentTrack.album}";*/
 
-		private void richTextBox3_TextChanged(object sender, EventArgs e)
-		{
+            //make http request to queryURL
 
-		}
+            //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
+            HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/asia/asia");
 
-		private void playlistViewBox_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
+            //response from queryURL is a string which is the imageURL
+            HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
 
-		}
+            // Insert code that uses the response object.
+            WebHeaderCollection header = HttpWResp.Headers;
+            string responseText = string.Empty;
+            var encoding = ASCIIEncoding.ASCII;
+            using (var reader = new System.IO.StreamReader(HttpWResp.GetResponseStream(), encoding))
+            {
+                responseText = reader.ReadToEnd();
+            }
 
-		private void label4_Click(object sender, EventArgs e)
-		{
+            Console.WriteLine(responseText);
 
-		}
+            //update picture box based on new url
+            pictureBox1.ImageLocation = responseText;
+        }
 
-		private void playlistSearchButton_Click(object sender, EventArgs e)
-		{
+        //
+        //search functions
+        //
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchType = searchTypeDropDown.Text;
+            string searchText = songSearchTextBox.Text;
+            if (!searchType.Equals("") && !searchText.Equals(""))
+            {
+                searchResultsListBox.Items.Clear();
+                foreach (ITrack foundTrack in trackSearch.FindTracks(searchType, searchText))
+                {
+                    searchResultsListBox.Items.Add(foundTrack);
+                }
+            }
+        }
 
-		}
+        private void addToPlaylistButton_Click(object sender, EventArgs e)
+        {
+            if (searchResultsListBox.SelectedItems != null)
+            {
+                foreach (object selectedTrack in searchResultsListBox.SelectedItems)
+                {
+                    playlist.AddTrack((ITrack)selectedTrack);
+                }
+                UpdatePlaylist();
+            }
+        }
+
+        //
+        //playlist functions
+        //
+        private void UpdatePlaylist()
+        {
+            playlistBox.Items.Clear();
+            for (int i = 0; i < playlist.Count(); i++)
+            {
+                playlistBox.Items.Add(playlist.GetTrack(i));
+            }
+        }
+
+        private void UpdateCurrentTrack(ITrack track)
+        {
+            try { 
+                playlist.SetCurrentTrack(playlist.IndexOf(track));
+                audioPlayer.LoadTrack(playlist.CurrentTrack.GetPath());
+                audioPlayer.Play();
+
+                string currentTrackDetails = "Artist: " + playlist.CurrentTrack.Artist + Environment.NewLine
+                    + "Title: " + playlist.CurrentTrack.Title + Environment.NewLine
+                    + "Album: " + playlist.CurrentTrack.Album + Environment.NewLine
+                    + "Genre: " + playlist.CurrentTrack.Genre + Environment.NewLine
+                    + "Year: " + playlist.CurrentTrack.Year + Environment.NewLine;
+
+                currentTrackTextBox.Text = currentTrackDetails;
+            }
+            catch (Exception ex)
+            {
+                currentTrackTextBox.Text = ex.Message;
+            }
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            ITrack selectedTrack = (ITrack)playlistBox.SelectedItem;
+            if (selectedTrack != null)
+            {
+                playlist.RemoveTrack(playlist.IndexOf(selectedTrack));
+                UpdatePlaylist();
+            }
+        }
+
+        private void moveUpButton_Click(object sender, EventArgs e)
+        {
+            ITrack selectedTrack = (ITrack)playlistBox.SelectedItem;
+            if (selectedTrack != null)
+            {
+                int currentIndex = playlist.IndexOf(selectedTrack);
+                if (currentIndex > 0)
+                {
+                    int newIndex = currentIndex - 1;
+
+                    //move the track in the playlist
+                    playlist.MoveTrack(currentIndex, newIndex);
+                    UpdatePlaylist();
+
+                    //and change the selected track in the gui
+                    playlistBox.SelectedIndex = newIndex;
+                }
+            }
+        }
+
+        private void moveDownButton_Click(object sender, EventArgs e)
+        {
+            ITrack selectedTrack = (ITrack)playlistBox.SelectedItem;
+            if (selectedTrack != null)
+            {
+                int currentIndex = playlist.IndexOf(selectedTrack);
+                if (currentIndex < playlist.Count() - 1)
+                {
+                    int newIndex = currentIndex + 1;
+
+                    //move the track in the playlist
+                    playlist.MoveTrack(currentIndex, newIndex);
+                    UpdatePlaylist();
+
+                    //and change the selected track in the gui
+                    playlistBox.SelectedIndex = newIndex;
+                }
+            }
+        }
 
 
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
-			
+        //
+        //audio functions
+        //
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                audioPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                currentTrackTextBox.Text = ex.Message;
+            }
+        }
 
-		}
+        private void playlistBox_DoubleClick(object sender, EventArgs e)
+        {
+            ITrack selectedTrack = (ITrack)playlistBox.SelectedItem;
+            if (selectedTrack != null)
+            {
+                UpdateCurrentTrack(selectedTrack);
+            }
+        }
 
-		private void playButton_Click(object sender, EventArgs e)
-		{
-			//query this string to our server
-			/*String queryURL = $"http://159.65.235.100/covers/{currentTrack.artist}/{currentTrack.album}";*/
+        private void stopButton_Click(object sender, EventArgs e)
+        {
+            audioPlayer.Stop();
+        }
 
-			//make http request to queryURL
+        private void pauseButton_Click(object sender, EventArgs e)
+        {
+            audioPlayer.Pause();
+        }
 
-			//HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
-			HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/asia/asia");
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            bool trackIsNotLast = playlist.NextTrack();
+            if (trackIsNotLast)
+            {
+                UpdateCurrentTrack(playlist.CurrentTrack);
+            }
+        }
 
-			//response from queryURL is a string which is the imageURL
-			HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
-
-			// Insert code that uses the response object.
-			WebHeaderCollection header = HttpWResp.Headers;
-			string responseText = string.Empty;
-			var encoding = ASCIIEncoding.ASCII;
-			using (var reader = new System.IO.StreamReader(HttpWResp.GetResponseStream(), encoding))
-			{
-				responseText = reader.ReadToEnd();
-			}
-
-			Console.WriteLine(responseText);
-
-			//update picture box based on new url
-			pictureBox1.ImageLocation = responseText;
-		}
-
-	}
+        private void previousButton_Click(object sender, EventArgs e)
+        {
+            bool trackIsNotFirst = playlist.PreviousTrack();
+            if (trackIsNotFirst)
+            {
+                UpdateCurrentTrack(playlist.CurrentTrack);
+            }
+        }
+    }
 }

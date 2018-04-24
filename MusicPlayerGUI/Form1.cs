@@ -28,7 +28,7 @@ namespace MusicPlayerGUI
         private IUser user;
         private IChatSender chatSender;
         private IChatReceiver chatReceiver;
-
+        private Socket socket;
         private IActivePlaylist activePlaylist;
         private IAudioPlayer audioPlayer;
         private ICurrentTrack currentTrack;
@@ -47,6 +47,22 @@ namespace MusicPlayerGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            socket = IO.Socket("http://159.65.235.100:6024");
+            socket.On(Socket.EVENT_CONNECT, () =>
+            {
+                socket.Emit("chat", (data) =>
+                {
+                    Console.WriteLine("Chat is connected");
+                });
+            });
+
+            socket.On("chat", (data) =>
+            {
+                var messages = new { messages = "" };
+                var messageVal = JsonConvert.DeserializeAnonymousType((string)data, messages);
+                updateMessages((string)messages.messages);
+            });
+
             string trackHost = "http://159.65.235.100";
             int trackPort = 6024;
 
@@ -78,24 +94,9 @@ namespace MusicPlayerGUI
             // this.chatFeedBox.Text += Environment.NewLine + "User: " + this.chatTextEntryBox.Text;
             // this.chatTextEntryBox.Text = "";
 
-            chatManager();
-        }
-
-        private void chatManager()
-        {
-            var socket = IO.Socket("http://159.65.235.100:6024");
-
-            socket.On(Socket.EVENT_CONNECT, () =>
-                {
-
-                });
-
-            socket.On("chat", (data) =>
-            {
-                var messages = new { messages = "" };
-                var messageVal = JsonConvert.DeserializeAnonymousType((string)data,messages);
-                updateMessages((string)messages.messages);
-            });
+            string message = String.Empty;
+            message = this.chatTextEntryBox.Text;
+            socket.Emit("chat", (message));
         }
 
         private void updateMessages(string text)

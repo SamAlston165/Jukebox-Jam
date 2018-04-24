@@ -1,5 +1,4 @@
 ﻿using Audio;
-using Chat;
 using Interfaces;
 using Newtonsoft.Json;
 using Playlist;
@@ -24,7 +23,7 @@ namespace MusicPlayerGUI
     public partial class Form1 : Form
     {
         private ILogin login;
-        public delegate void UpdateTextBoxMethod(string text);
+        private delegate void UpdateTextBoxMethod(string text);
         private IUser user;
         private IChatSender chatSender;
         private IChatReceiver chatReceiver;
@@ -32,11 +31,8 @@ namespace MusicPlayerGUI
         private IActivePlaylist activePlaylist;
         private IAudioPlayer audioPlayer;
         private ICurrentTrack currentTrack;
-
         private IImageSearch imageSearch;
-
         private IPlaylistSearch playlistSearch;
-
         private ISearch trackSearch;
 
 
@@ -70,8 +66,6 @@ namespace MusicPlayerGUI
 
             //user = login.AuthorizeUser("username", "password");
             user = new AUser("");
-          //  chatSender = new ChatSender(user);
-            chatReceiver = new ChatReceiver();
 
             activePlaylist = new ActivePlaylist(new APlaylist());
             audioPlayer = new DBAudioPlayer(new AudioPlayer(), trackHost, trackPort);
@@ -94,9 +88,11 @@ namespace MusicPlayerGUI
             // this.chatFeedBox.Text += Environment.NewLine + "User: " + this.chatTextEntryBox.Text;
             // this.chatTextEntryBox.Text = "";
 
+            //STILL NEEDS TO BE TESTED VIA SERVER
             string message = String.Empty;
-            message = this.chatTextEntryBox.Text;
+            message += user.Username + ": " + this.chatTextEntryBox.Text;
             socket.Emit("chat", (message));
+            this.chatTextEntryBox.Text = "";
         }
 
         private void updateMessages(string text)
@@ -110,11 +106,6 @@ namespace MusicPlayerGUI
             {
                 this.chatFeedBox.Text = text;
             }
-        }
-       
-        private void updateStatus()
-        {
-
         }
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,7 +142,6 @@ namespace MusicPlayerGUI
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
 			
-
 		}
 
 		private void playButton_Click(object sender, EventArgs e)
@@ -181,6 +171,5 @@ namespace MusicPlayerGUI
 			//update picture box based on new url
 			pictureBox1.ImageLocation = responseText;
 		}
-
 	}
 }

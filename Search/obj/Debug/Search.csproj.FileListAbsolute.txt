@@ -37,3 +37,19 @@ C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\Search\bin\Debug\System.Net
 C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\Search\obj\Debug\Search.csprojResolveAssemblyReference.cache
 C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\Search\obj\Debug\Search.dll
 C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\Search\obj\Debug\Search.pdb
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Search.dll.config
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Search.dll
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Search.pdb
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Interfaces.dll
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Track.dll
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Interfaces.pdb
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Track.pdb
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samue\Jukebox-Jam\Search\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\samue\Jukebox-Jam\Search\obj\Debug\Search.csprojResolveAssemblyReference.cache
+C:\Users\samue\Jukebox-Jam\Search\obj\Debug\Search.csproj.CoreCompileInputs.cache
+C:\Users\samue\Jukebox-Jam\Search\obj\Debug\Search.csproj.CopyComplete
+C:\Users\samue\Jukebox-Jam\Search\obj\Debug\Search.dll
+C:\Users\samue\Jukebox-Jam\Search\obj\Debug\Search.pdb

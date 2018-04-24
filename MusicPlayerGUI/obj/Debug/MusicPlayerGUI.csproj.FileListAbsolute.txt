@@ -1,81 +1,3 @@
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe.config
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csprojResolveAssemblyReference.cache
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Form1.resources
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Properties.Resources.resources
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.GenerateResource.Cache
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.CoreCompileInputs.cache
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe.config
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csprojResolveAssemblyReference.cache
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Form1.resources
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Properties.Resources.resources
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.GenerateResource.Cache
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.CoreCompileInputs.cache
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Views.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Views.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Track.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Newtonsoft.Json.dll
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.dll.config
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Track.pdb
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.xml
-C:\Users\owner\Documents\GitHub\SE2\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.xml
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe.config
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Track.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Views.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.dll
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.dll.config
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Track.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\User.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Views.pdb
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.xml
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.xml
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csprojResolveAssemblyReference.cache
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Form1.resources
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Properties.Resources.resources
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.GenerateResource.Cache
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe
-C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.pdb
-C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csprojResolveAssemblyReference.cache
-C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe.config
-C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Form1.resources
-C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Properties.Resources.resources
-C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.GenerateResource.Cache
-C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.CoreCompileInputs.cache
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe.config
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.exe
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\MusicPlayerGUI.pdb
@@ -176,7 +98,6 @@ C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Syste
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Xml.XPath.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.dll
-C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\EngineIoClientDotNet.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Newtonsoft.Json.dll
@@ -192,7 +113,6 @@ C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\WebSo
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Audio.pdb
-C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Chat.pdb
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Interfaces.pdb
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Playlist.pdb
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Search.pdb
@@ -204,5 +124,11 @@ C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\Newto
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Collections.Immutable.xml
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\NAudio.xml
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csprojResolveAssemblyReference.cache
+C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe.config
+C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Form1.resources
+C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.Properties.Resources.resources
+C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.GenerateResource.Cache
+C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.csproj.CoreCompileInputs.cache
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.exe
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\MusicPlayerGUI\obj\Debug\MusicPlayerGUI.pdb

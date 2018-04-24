@@ -27,6 +27,7 @@ C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\Audio\bin\Debug\NAudio.xml
 C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\Audio\obj\Debug\Audio.csprojResolveAssemblyReference.cache
 C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\Audio\obj\Debug\Audio.dll
 C:\Users\Wolf Raynsford\Documents\GitHub\Jukebox-Jam\Audio\obj\Debug\Audio.pdb
+<<<<<<< HEAD
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\Audio\bin\Debug\Audio.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\Audio\bin\Debug\Audio.pdb
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\Audio\bin\Debug\Interfaces.dll
@@ -37,3 +38,16 @@ C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\Audio\obj\Debug\Audio.csprojRe
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\Audio\obj\Debug\Audio.csproj.CoreCompileInputs.cache
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\Audio\obj\Debug\Audio.dll
 C:\Users\owner\Documents\GitHub\jj424\Jukebox-Jam\Audio\obj\Debug\Audio.pdb
+=======
+C:\Users\samue\Jukebox-Jam\Audio\bin\Debug\Audio.dll
+C:\Users\samue\Jukebox-Jam\Audio\bin\Debug\Audio.pdb
+C:\Users\samue\Jukebox-Jam\Audio\bin\Debug\Interfaces.dll
+C:\Users\samue\Jukebox-Jam\Audio\bin\Debug\NAudio.dll
+C:\Users\samue\Jukebox-Jam\Audio\bin\Debug\Interfaces.pdb
+C:\Users\samue\Jukebox-Jam\Audio\bin\Debug\NAudio.xml
+C:\Users\samue\Jukebox-Jam\Audio\obj\Debug\Audio.csprojResolveAssemblyReference.cache
+C:\Users\samue\Jukebox-Jam\Audio\obj\Debug\Audio.csproj.CoreCompileInputs.cache
+C:\Users\samue\Jukebox-Jam\Audio\obj\Debug\Audio.csproj.CopyComplete
+C:\Users\samue\Jukebox-Jam\Audio\obj\Debug\Audio.dll
+C:\Users\samue\Jukebox-Jam\Audio\obj\Debug\Audio.pdb
+>>>>>>> eb2949ea00fa3fc5e85a926b2c0ae45e3722968f

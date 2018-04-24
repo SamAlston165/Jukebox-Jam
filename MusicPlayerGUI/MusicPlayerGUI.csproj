@@ -150,10 +150,6 @@
       <Project>{650A1993-D700-4F68-A88D-AF7ECE6FDA87}</Project>
       <Name>Audio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Chat\Chat.csproj">
-      <Project>{43A1C536-8A3E-4C57-B602-5F1AFC61F6D8}</Project>
-      <Name>Chat</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{7D20AF79-E5F4-43E4-9E2F-FE1B881D21EE}</Project>
       <Name>Interfaces</Name>

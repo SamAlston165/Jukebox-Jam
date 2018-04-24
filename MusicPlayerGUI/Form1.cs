@@ -1,5 +1,4 @@
 ﻿using Audio;
-using Chat;
 using Interfaces;
 using Newtonsoft.Json;
 using Playlist;
@@ -111,7 +110,7 @@ namespace MusicPlayerGUI
 
         private void updateMessages(string text)
         {
-            if(this.chatFeedBox.InvokeRequired)
+            if (this.chatFeedBox.InvokeRequired)
             {
                 UpdateTextBoxMethod del = new UpdateTextBoxMethod(updateMessages);
                 this.Invoke(del, new object[] { text });
@@ -121,7 +120,7 @@ namespace MusicPlayerGUI
                 this.chatFeedBox.Text = text;
             }
         }
-       
+
         private void updateStatus()
         {
 
@@ -149,7 +148,7 @@ namespace MusicPlayerGUI
         private void logInButton_Click(object sender, EventArgs e)
         {
             user = login.AuthorizeUser(userNameTextBox.Text, passwordTextBox.Text);
-            if(user == null)
+            if (user == null)
             {
                 loginSuccessOrFailLabel.Text = "login fail";
             }
@@ -233,7 +232,8 @@ namespace MusicPlayerGUI
 
         private void UpdateCurrentTrack(ITrack track)
         {
-            try { 
+            try
+            {
                 playlist.SetCurrentTrack(playlist.IndexOf(track));
                 audioPlayer.LoadTrack(playlist.CurrentTrack.GetPath());
                 audioPlayer.Play();

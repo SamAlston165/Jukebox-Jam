@@ -348,7 +348,13 @@ namespace MusicPlayerGUI
 
         private void previousButton_Click(object sender, EventArgs e)
         {
-            bool trackIsNotFirst = playlist.PreviousTrack();
+			previousButton.TabStop = false;
+			previousButton.FlatStyle = FlatStyle.Flat;
+			previousButton.FlatAppearance.BorderSize = 0;
+			previousButton.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent
+
+
+			bool trackIsNotFirst = playlist.PreviousTrack();
             if (trackIsNotFirst)
             {
                 UpdateCurrentTrack(playlist.CurrentTrack);

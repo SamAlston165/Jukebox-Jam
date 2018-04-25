@@ -54,7 +54,7 @@ namespace MusicPlayerGUI
             //
             //chat
             //
-            InitializeChat();
+            InitializeChat(trackHost, trackPort);
             login = new Login();
             user = new AUser("");
             //the next line shows how a user will be authenticated
@@ -151,9 +151,9 @@ namespace MusicPlayerGUI
 
         }
 
-        private void InitializeChat()
+        private void InitializeChat(string host, int port)
         {
-            socket = IO.Socket("http://159.65.235.100:8080");
+            socket = IO.Socket(host + ":" + port.ToString());//"http://159.65.235.100:8080");
             socket.On(Socket.EVENT_CONNECT, () =>
             {
                 Console.WriteLine("client connected");
@@ -173,11 +173,11 @@ namespace MusicPlayerGUI
             user = login.AuthorizeUser(userNameTextBox.Text, passwordTextBox.Text);
             if (user == null)
             {
-                loginSuccessOrFailLabel.Text = "login fail";
+                loginSuccessOrFailLabel.Text = "Login failed";
             }
             else
             {
-                loginSuccessOrFailLabel.Text = "logged in as " + user.Username;
+                loginSuccessOrFailLabel.Text = "Logged in as " + user.Username;
             }
         }
 

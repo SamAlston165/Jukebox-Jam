@@ -48,9 +48,8 @@ namespace UnitTests
             //Check if property matches the dynamic setter
 
             Assert.AreEqual(album, track.Album);
-
-
         }
+
         [TestMethod]
         public void CanGetandSetTrackYear()
         {
@@ -71,8 +70,8 @@ namespace UnitTests
             //Check if property matches the dynamic setter
 
             Assert.AreEqual(year, track.Year);
-
         }
+
         [TestMethod]
         public void CanGetandSetTrackGenre()
         {
@@ -93,12 +92,11 @@ namespace UnitTests
             //Check if property matches the dynamic setter
 
             Assert.AreEqual(genre, track.Genre);
-
         }
+
         [TestMethod]
         public void CanGetandSetTrackTitle()
         {
-
             //act
             //Testing that track properties can manipulated
 
@@ -116,13 +114,11 @@ namespace UnitTests
             //Check if property matches the dynamic setter
 
             Assert.AreEqual(title, track.Title);
-
         }
 
         [TestMethod]
         public void ToStringReturnsArtistAndTitle()
         {
-
             //arrange
             const string artist = "A good artist";
             const string title = "A good song";
@@ -138,13 +134,11 @@ namespace UnitTests
 
             //assert
             Assert.AreEqual(expected, trackString);
-
         }
 
         [TestMethod]
-        public void TrackReturnsCorrectURL()
+        public void TrackReturnsCorrectPath()
         {
-
             //arrange
             const string artist = "A good artist";
             const string title = "A good song";
@@ -156,11 +150,10 @@ namespace UnitTests
             };
 
             //act
-            string URLString = track.GetPath();
+            string pathString = track.GetPath();
 
             //assert
-            Assert.AreEqual(expected, URLString);
-
+            Assert.AreEqual(expected, pathString);
         }
     }
 }

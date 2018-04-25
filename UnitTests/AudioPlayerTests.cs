@@ -1,6 +1,7 @@
 ﻿using System;
 using Audio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace UnitTests
 {
@@ -28,10 +29,8 @@ namespace UnitTests
 
             //act
             sut.LoadTrack(validURL);
-
-            //assert
-            //assert that an exception has not been thrown and this line can be reached
-            Assert.AreEqual(validURL, validURL);
+            
+            //assert that an exception has not been thrown and the test method completes
         }
 
         [TestMethod]
@@ -56,10 +55,8 @@ namespace UnitTests
 
             //act
             sut.Play();
-
-            //assert
-            //assert that an exception has not been thrown and this line can be reached
-            Assert.AreEqual(validURL, validURL);
+            
+            //assert that an exception has not been thrown and the test method completes
         }
 
         [TestMethod]
@@ -75,6 +72,28 @@ namespace UnitTests
 
             //act
             sut.Play();
+        }
+
+        /// <summary>
+        /// The server must be running for this test to pass
+        /// </summary>
+        [TestMethod]
+        public void PlayingATrackFromTheServerIsSuccessful()
+        {
+            string trackHost = "http://159.65.235.100";
+            int trackPort = 6024;
+
+            //arrange
+            var audioPlayer = new Mock<AudioPlayer>();
+
+            DBAudioPlayer sut = new DBAudioPlayer(audioPlayer.Object, trackHost, trackPort);
+            string validTrackPath = "/David-Bowie/Under-Pressure.mp3";
+            sut.LoadTrack(validTrackPath);
+
+            //act
+            sut.Play();
+
+            //assert that an exception has not been thrown and the test method completes
         }
     }
 }

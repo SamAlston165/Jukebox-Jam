@@ -1,5 +1,7 @@
 ﻿using System;
+using Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using Playlist;
 using Track;
 
@@ -17,14 +19,13 @@ namespace UnitTests
             int expectedResult = 0;
 
             //arrange
-            DBTrack track = new DBTrack();
-            track.Title = "test track";
+            var track = new Mock<ITrack>();
 
             APlaylist sut = new APlaylist();
 
             //act
-            sut.AddTrack(track);
-            int result = sut.IndexOf(track);
+            sut.AddTrack(track.Object);
+            int result = sut.IndexOf(track.Object);
 
             //assert
             Assert.AreEqual(expectedResult, result);
@@ -35,17 +36,16 @@ namespace UnitTests
         {
             //set up a playlist with two tracks, set the second to current,
             //and test that previousTrack() sets first to current
+            string expectedResult = "David Bowie - Under Pressure";
 
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            string expectedResult = track1.ToString();
-            DBTrack track2 = new DBTrack();
-            track2.Title = "test track2";
+            var track1 = new Mock<ITrack>();
+            var track2 = new Mock<ITrack>();
+            track1.Setup(r => r.ToString()).Returns(expectedResult);
 
             ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
-            sut.AddTrack(track2);
+            sut.AddTrack(track1.Object);
+            sut.AddTrack(track2.Object);
             sut.SetCurrentTrack(1);
 
             //act
@@ -64,16 +64,16 @@ namespace UnitTests
             //and test that previousTrack() does not change current if there
             //are no previous tracks
 
+            string expectedResult = "David Bowie - Under Pressure";
+
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            string expectedResult = track1.ToString();
-            DBTrack track2 = new DBTrack();
-            track2.Title = "test track2";
+            var track1 = new Mock<ITrack>();
+            var track2 = new Mock<ITrack>();
+            track1.Setup(r => r.ToString()).Returns(expectedResult);
 
             ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
-            sut.AddTrack(track2);
+            sut.AddTrack(track1.Object);
+            sut.AddTrack(track2.Object);
             sut.SetCurrentTrack(0);
 
             //act
@@ -90,17 +90,17 @@ namespace UnitTests
         {
             //set up a playlist with two tracks, set the first to current,
             //and test that nextTrack() sets second to current
+            
+            string expectedResult = "David Bowie - Under Pressure";
 
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            DBTrack track2 = new DBTrack();
-            track2.Title = "test track2";
-            string expectedResult = track2.ToString();
+            var track1 = new Mock<ITrack>();
+            var track2 = new Mock<ITrack>();
+            track2.Setup(r => r.ToString()).Returns(expectedResult);
 
             ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
-            sut.AddTrack(track2);
+            sut.AddTrack(track1.Object);
+            sut.AddTrack(track2.Object);
             sut.SetCurrentTrack(0);
 
             //act
@@ -119,16 +119,16 @@ namespace UnitTests
             //and test that nextTrack() does not change current if there
             //are no next tracks
 
+            string expectedResult = "David Bowie - Under Pressure";
+
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            DBTrack track2 = new DBTrack();
-            track2.Title = "test track2";
-            string expectedResult = track2.ToString();
+            var track1 = new Mock<ITrack>();
+            var track2 = new Mock<ITrack>();
+            track2.Setup(r => r.ToString()).Returns(expectedResult);
 
             ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
-            sut.AddTrack(track2);
+            sut.AddTrack(track1.Object);
+            sut.AddTrack(track2.Object);
             sut.SetCurrentTrack(1);
 
             //act
@@ -143,32 +143,15 @@ namespace UnitTests
         [TestMethod]
         public void CurrentTrackToStringIsSuccessfulWhenTrackIsNotNull()
         {
-            //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            string expectedResult = track1.ToString();
 
-            ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
-            sut.SetCurrentTrack(0);
-
-            //act
-            string result = sut.CurrentTrack.ToString();
-
-            //assert
-            Assert.AreEqual(expectedResult, result);
-        }
-
-        [TestMethod]
-        public void CurrentTrackToStringReturnsEmptyStringWhenTrackIsNull()
-        {
-            string expectedResult = "";
+            string expectedResult = "David Bowie - Under Pressure";
 
             //arrange
-            DBTrack track1 = null;
+            var track1 = new Mock<ITrack>();
+            track1.Setup(r => r.ToString()).Returns(expectedResult);
 
             ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
+            sut.AddTrack(track1.Object);
             sut.SetCurrentTrack(0);
 
             //act
@@ -185,15 +168,14 @@ namespace UnitTests
             int expectedResult = -1;
 
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
+            var track1 = new Mock<ITrack>();
 
             APlaylist sut = new APlaylist();
-            sut.AddTrack(track1);
+            sut.AddTrack(track1.Object);
 
             //act
             sut.RemoveTrack(0);
-            int result = sut.IndexOf(track1);
+            int result = sut.IndexOf(track1.Object);
 
             //assert
             Assert.AreEqual(expectedResult, result);
@@ -208,18 +190,16 @@ namespace UnitTests
             int expectedResult = 1;
 
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            DBTrack track2 = new DBTrack();
-            track2.Title = "test track2";
+            var track1 = new Mock<ITrack>();
+            var track2 = new Mock<ITrack>();
 
             APlaylist sut = new APlaylist();
-            sut.AddTrack(track1);
-            sut.AddTrack(track2);
+            sut.AddTrack(track1.Object);
+            sut.AddTrack(track2.Object);
 
             //act
             sut.MoveTrack(0, 1);
-            int result = sut.IndexOf(track1);
+            int result = sut.IndexOf(track1.Object);
 
             //assert
             Assert.AreEqual(expectedResult, result);
@@ -235,18 +215,16 @@ namespace UnitTests
             int expectedResult = 0;
 
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            DBTrack track2 = new DBTrack();
-            track2.Title = "test track2";
+            var track1 = new Mock<ITrack>();
+            var track2 = new Mock<ITrack>();
 
             APlaylist sut = new APlaylist();
-            sut.AddTrack(track1);
-            sut.AddTrack(track2);
+            sut.AddTrack(track1.Object);
+            sut.AddTrack(track2.Object);
 
             //act
             sut.MoveTrack(5, 0);
-            int result = sut.IndexOf(track1);
+            int result = sut.IndexOf(track1.Object);
 
             //assert
             Assert.AreEqual(expectedResult, result);
@@ -262,18 +240,16 @@ namespace UnitTests
             int expectedResult = 0;
 
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            DBTrack track2 = new DBTrack();
-            track2.Title = "test track2";
+            var track1 = new Mock<ITrack>();
+            var track2 = new Mock<ITrack>();
 
             APlaylist sut = new APlaylist();
-            sut.AddTrack(track1);
-            sut.AddTrack(track2);
+            sut.AddTrack(track1.Object);
+            sut.AddTrack(track2.Object);
 
             //act
             sut.MoveTrack(0, 5);
-            int result = sut.IndexOf(track1);
+            int result = sut.IndexOf(track1.Object);
 
             //assert
             Assert.AreEqual(expectedResult, result);
@@ -282,13 +258,14 @@ namespace UnitTests
         [TestMethod]
         public void SetCurrentTrackIsSuccessful()
         {
+            string expectedResult = "David Bowie - Under Pressure";
+            
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            string expectedResult = track1.ToString();
+            var track1 = new Mock<ITrack>();
+            track1.Setup(r => r.ToString()).Returns(expectedResult);
 
             ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
+            sut.AddTrack(track1.Object);
 
             //act
             sut.SetCurrentTrack(0);
@@ -301,13 +278,14 @@ namespace UnitTests
         [TestMethod]
         public void SetCurrentTrackDoesNothingWhenIndexIsOutOfRange()
         {
+            string expectedResult = "David Bowie - Under Pressure";
+
             //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            string expectedResult = track1.ToString();
+            var track1 = new Mock<ITrack>();
+            track1.Setup(r => r.ToString()).Returns(expectedResult);
 
             ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
+            sut.AddTrack(track1.Object);
             sut.SetCurrentTrack(0);
 
             //act
@@ -319,34 +297,16 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void CurrentTrackURLIsSuccessfulWhenTrackIsNotNull()
+        public void CurrentTrackPathIsSuccessfulWhenTrackIsNotNull()
         {
-            //arrange
-            DBTrack track1 = new DBTrack();
-            track1.Title = "test track1";
-            string expectedResult = track1.GetPath();
-
-            ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
-            sut.SetCurrentTrack(0);
-
-            //act
-            string result = sut.CurrentTrack.GetPath();
-
-            //assert
-            Assert.AreEqual(expectedResult, result);
-        }
-
-        [TestMethod]
-        public void CurrentTrackURLReturnsEmptyStringWhenTrackIsNull()
-        {
-            string expectedResult = "";
+            string expectedResult = "http://apathToaSong.mp3";
 
             //arrange
-            DBTrack track1 = null;
+            var track1 = new Mock<ITrack>();
+            track1.Setup(r => r.GetPath()).Returns(expectedResult);
 
             ActivePlaylist sut = new ActivePlaylist(new APlaylist());
-            sut.AddTrack(track1);
+            sut.AddTrack(track1.Object);
             sut.SetCurrentTrack(0);
 
             //act

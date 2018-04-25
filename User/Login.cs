@@ -32,7 +32,11 @@ namespace User
         private async Task<bool> UsernameAndPasswordAreInDatabase(string username, string password)
         {
 
-            if(username == "user" && password == "password")
+            if(username == "user1" && password == "user1")
+            {
+                return true;
+            }
+            else if(username == "user2" && password == "user2")
             {
                 return true;
             }

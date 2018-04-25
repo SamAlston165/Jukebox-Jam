@@ -85,6 +85,8 @@ namespace MusicPlayerGUI
             titleLabel.Text = "";
             albumLabel.Text = "";
             genreLabel.Text = "";
+
+            loginSuccessOrFailLabel.Text = "";
         }
 
         private void SearchAllTracks()

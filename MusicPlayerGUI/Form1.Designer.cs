@@ -165,7 +165,7 @@
             this.nextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nextButton.ForeColor = System.Drawing.Color.Navy;
-            this.nextButton.Location = new System.Drawing.Point(579, 356);
+            this.nextButton.Location = new System.Drawing.Point(588, 370);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(70, 70);
             this.nextButton.TabIndex = 12;
@@ -179,7 +179,7 @@
             this.stopButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stopButton.ForeColor = System.Drawing.Color.Navy;
-            this.stopButton.Location = new System.Drawing.Point(264, 356);
+            this.stopButton.Location = new System.Drawing.Point(273, 370);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(70, 70);
             this.stopButton.TabIndex = 11;
@@ -193,7 +193,7 @@
             this.pauseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pauseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pauseButton.ForeColor = System.Drawing.Color.Navy;
-            this.pauseButton.Location = new System.Drawing.Point(470, 356);
+            this.pauseButton.Location = new System.Drawing.Point(479, 370);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(70, 70);
             this.pauseButton.TabIndex = 10;
@@ -207,7 +207,7 @@
             this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playButton.ForeColor = System.Drawing.Color.Navy;
-            this.playButton.Location = new System.Drawing.Point(366, 356);
+            this.playButton.Location = new System.Drawing.Point(375, 370);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(70, 70);
             this.playButton.TabIndex = 9;
@@ -221,7 +221,7 @@
             this.previousButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previousButton.ForeColor = System.Drawing.Color.Navy;
-            this.previousButton.Location = new System.Drawing.Point(148, 356);
+            this.previousButton.Location = new System.Drawing.Point(157, 370);
             this.previousButton.Name = "previousButton";
             this.previousButton.Size = new System.Drawing.Size(70, 70);
             this.previousButton.TabIndex = 8;
@@ -233,7 +233,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(568, 3);
+            this.label4.Location = new System.Drawing.Point(551, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 25);
             this.label4.TabIndex = 17;
@@ -313,8 +313,7 @@
             this.searchTypeDropDown.Items.AddRange(new object[] {
             "Artist",
             "Title",
-            "Genre",
-            "Year"});
+            "Genre"});
             this.searchTypeDropDown.Location = new System.Drawing.Point(556, 33);
             this.searchTypeDropDown.Name = "searchTypeDropDown";
             this.searchTypeDropDown.Size = new System.Drawing.Size(113, 21);
@@ -369,7 +368,7 @@
             // logInButton
             // 
             this.logInButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.logInButton.Location = new System.Drawing.Point(716, 422);
+            this.logInButton.Location = new System.Drawing.Point(724, 425);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(75, 23);
             this.logInButton.TabIndex = 28;
@@ -432,10 +431,12 @@
             // loginSuccessOrFailLabel
             // 
             this.loginSuccessOrFailLabel.AutoSize = true;
-            this.loginSuccessOrFailLabel.Location = new System.Drawing.Point(614, 432);
+            this.loginSuccessOrFailLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.loginSuccessOrFailLabel.Location = new System.Drawing.Point(699, 451);
             this.loginSuccessOrFailLabel.Name = "loginSuccessOrFailLabel";
-            this.loginSuccessOrFailLabel.Size = new System.Drawing.Size(0, 13);
+            this.loginSuccessOrFailLabel.Size = new System.Drawing.Size(123, 13);
             this.loginSuccessOrFailLabel.TabIndex = 35;
+            this.loginSuccessOrFailLabel.Text = "loginSuccessOrFailLabel";
             // 
             // artistLabel
             // 
@@ -531,7 +532,9 @@
             this.Controls.Add(this.playlistBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(820, 493);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(877, 516);
+            this.MinimumSize = new System.Drawing.Size(877, 516);
             this.Name = "Form1";
             this.Text = "JukeBox Jam";
             this.Load += new System.EventHandler(this.Form1_Load);

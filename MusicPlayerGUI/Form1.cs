@@ -86,9 +86,18 @@ namespace MusicPlayerGUI
         private void SearchAllTracks()
         {
             searchResultsListBox.Items.Clear();
-            foreach (ITrack foundTrack in trackSearch.FindTracks("songs", ""))
+            try
             {
-                searchResultsListBox.Items.Add(foundTrack);
+                foreach (ITrack foundTrack in trackSearch.FindTracks("songs", ""))
+                {
+                    searchResultsListBox.Items.Add(foundTrack);
+                }
+            } catch(Exception e)
+            {
+                //if server is not running, return static list of tracks
+                trackSearch = new StaticSongList();
+                audioPlayer = new AudioPlayer();
+                SearchAllTracks();
             }
         }
 

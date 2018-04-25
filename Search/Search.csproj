@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DBSearch.cs" />
-    <Compile Include="StaticLocalTracks.cs" />
+    <Compile Include="StaticSongList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

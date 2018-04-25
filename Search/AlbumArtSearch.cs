@@ -20,13 +20,11 @@ namespace Search
         public string GetAlbumArtPath(string artist, string album)
         {
             //query this string to our server
-            /*String queryURL = $"http://159.65.235.100/covers/{currentTrack.artist}/{currentTrack.album}";*/
+            /*String queryURL = $"http://159.65.235.100:8080/covers/{currentTrack.artist}/{currentTrack.album}";*/
 
             //make http request to queryURL
 
             HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create(host + "/covers/" + artist + "/" + album);
-                //"http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
-            //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/asia/asia");
 
             //response from queryURL is a string which is the imageURL
             HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
@@ -43,7 +41,6 @@ namespace Search
             //Console.WriteLine(responseText);
 
             //update picture box based on new url
-            //pictureBox1.ImageLocation = responseText;
             return responseText;
         }
     }

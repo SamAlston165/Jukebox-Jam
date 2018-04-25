@@ -80,6 +80,11 @@ namespace MusicPlayerGUI
             //
             trackSearch = new DBSearch(trackHost, trackPort);
             SearchAllTracks();
+
+            artistLabel.Text = "";
+            titleLabel.Text = "";
+            albumLabel.Text = "";
+            genreLabel.Text = "";
         }
 
         private void SearchAllTracks()
@@ -116,6 +121,14 @@ namespace MusicPlayerGUI
             socket.Emit("chat", (message));
 
             chatTextEntryBox.Text = "";
+        }
+
+        private void chatTextEntryBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSend_Click(sender, e);
+            }
         }
 
         private void updateMessages(string text)
@@ -167,38 +180,6 @@ namespace MusicPlayerGUI
         }
 
         //
-        //placeholder for showing album art
-        //
-        private void showAlbumArtButton_Click(object sender, EventArgs e)
-        {
-            //query this string to our server
-            /*String queryURL = $"http://159.65.235.100/covers/{currentTrack.artist}/{currentTrack.album}";*/
-
-            //make http request to queryURL
-
-            //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
-            HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:8080/covers/asia/asia");
-
-            //response from queryURL is a string which is the imageURL
-            HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
-
-            // Insert code that uses the response object.
-            WebHeaderCollection header = HttpWResp.Headers;
-            string responseText = string.Empty;
-            var encoding = ASCIIEncoding.ASCII;
-            using (var reader = new System.IO.StreamReader(HttpWResp.GetResponseStream(), encoding))
-            {
-                responseText = reader.ReadToEnd();
-            }
-
-            //Console.WriteLine(responseText);
-
-            //update picture box based on new url
-            pictureBox1.ImageLocation = responseText;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-
-        //
         //search functions
         //
         private void searchButton_Click(object sender, EventArgs e)
@@ -247,25 +228,22 @@ namespace MusicPlayerGUI
                 audioPlayer.LoadTrack(playlist.CurrentTrack.GetPath());
                 audioPlayer.Play();
 
-                string currentTrackDetails = "Artist: " + playlist.CurrentTrack.Artist + Environment.NewLine
-                    + "Title: " + playlist.CurrentTrack.Title + Environment.NewLine
-                    + "Album: " + playlist.CurrentTrack.Album + Environment.NewLine
-                    + "Genre: " + playlist.CurrentTrack.Genre + Environment.NewLine
-                    + "Year: " + playlist.CurrentTrack.Year + Environment.NewLine;
+                artistLabel.Text = playlist.CurrentTrack.Artist;
+                titleLabel.Text = playlist.CurrentTrack.Title;
+                albumLabel.Text = playlist.CurrentTrack.Album;
+                genreLabel.Text = playlist.CurrentTrack.Genre;
 
-                currentTrackTextBox.Text = currentTrackDetails;
 
-                /*
+
                 try {
                     string albumArtPath = imageSearch.GetAlbumArtPath(playlist.CurrentTrack.Artist, playlist.CurrentTrack.Album);
                     pictureBox1.ImageLocation = albumArtPath;
                 }
-                catch (Exception e) { currentTrackTextBox.Text += e.Message; }
-                */
+                catch (Exception e) { genreLabel.Text += e.Message; }
             }
             catch (Exception ex)
             {
-                currentTrackTextBox.Text = ex.Message;
+                genreLabel.Text = ex.Message;
             }
         }
 
@@ -332,7 +310,7 @@ namespace MusicPlayerGUI
             }
             catch (Exception ex)
             {
-                currentTrackTextBox.Text = ex.Message;
+                genreLabel.Text = ex.Message;
             }
         }
 
@@ -373,12 +351,38 @@ namespace MusicPlayerGUI
             }
         }
 
-        private void chatTextEntryBox_KeyDown(object sender, KeyEventArgs e)
+
+        /*
+        //
+        //placeholder for showing album art
+        //
+        private void showAlbumArtButton_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            //query this string to our server
+            //String queryURL = $"http://159.65.235.100/covers/{currentTrack.artist}/{currentTrack.album}";
+
+            //make http request to queryURL
+
+            //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
+            HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:8080/covers/Curtis-Mayfield/Super-Fly");
+
+            //response from queryURL is a string which is the imageURL
+            HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
+
+            // Insert code that uses the response object.
+            WebHeaderCollection header = HttpWResp.Headers;
+            string responseText = string.Empty;
+            var encoding = ASCIIEncoding.ASCII;
+            using (var reader = new System.IO.StreamReader(HttpWResp.GetResponseStream(), encoding))
             {
-                btnSend_Click(sender, e);
+                responseText = reader.ReadToEnd();
             }
+
+            //Console.WriteLine(responseText);
+
+            //update picture box based on new url
+            pictureBox1.ImageLocation = responseText;
         }
+    */
     }
 }

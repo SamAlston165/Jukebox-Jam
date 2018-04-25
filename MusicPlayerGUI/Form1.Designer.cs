@@ -42,7 +42,6 @@
             this.pauseButton = new System.Windows.Forms.Button();
             this.playButton = new System.Windows.Forms.Button();
             this.previousButton = new System.Windows.Forms.Button();
-            this.showAlbumArtButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.searchBackground = new System.Windows.Forms.RichTextBox();
             this.songSearchTextBox = new System.Windows.Forms.TextBox();
@@ -62,10 +61,15 @@
             this.searchResultsListBox = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
-            this.currentTrackTextBox = new System.Windows.Forms.RichTextBox();
             this.loginSuccessOrFailLabel = new System.Windows.Forms.Label();
+            this.artistLabel = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.albumLabel = new System.Windows.Forms.Label();
+            this.songInfoPanel = new System.Windows.Forms.Panel();
+            this.genreLabel = new System.Windows.Forms.Label();
             this.editPlaylistBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.songInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // channelBox
@@ -83,7 +87,7 @@
             "+ Channel 5"});
             this.channelBox.Location = new System.Drawing.Point(0, 31);
             this.channelBox.Name = "channelBox";
-            this.channelBox.Size = new System.Drawing.Size(120, 300);
+            this.channelBox.Size = new System.Drawing.Size(142, 300);
             this.channelBox.TabIndex = 0;
             // 
             // label1
@@ -103,7 +107,7 @@
             this.chatFeedBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.chatFeedBox.Location = new System.Drawing.Point(684, 31);
             this.chatFeedBox.Name = "chatFeedBox";
-            this.chatFeedBox.Size = new System.Drawing.Size(104, 179);
+            this.chatFeedBox.Size = new System.Drawing.Size(161, 179);
             this.chatFeedBox.TabIndex = 3;
             this.chatFeedBox.Text = "";
             // 
@@ -112,7 +116,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(711, 3);
+            this.label2.Location = new System.Drawing.Point(731, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 25);
             this.label2.TabIndex = 4;
@@ -125,7 +129,7 @@
             this.chatTextEntryBox.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chatTextEntryBox.Location = new System.Drawing.Point(684, 206);
             this.chatTextEntryBox.Name = "chatTextEntryBox";
-            this.chatTextEntryBox.Size = new System.Drawing.Size(104, 85);
+            this.chatTextEntryBox.Size = new System.Drawing.Size(161, 85);
             this.chatTextEntryBox.TabIndex = 5;
             this.chatTextEntryBox.Text = "";
             this.chatTextEntryBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chatTextEntryBox_KeyDown);
@@ -137,7 +141,7 @@
             this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendButton.Location = new System.Drawing.Point(684, 297);
             this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(104, 34);
+            this.sendButton.Size = new System.Drawing.Size(161, 34);
             this.sendButton.TabIndex = 6;
             this.sendButton.Text = "Send";
             this.sendButton.UseVisualStyleBackColor = false;
@@ -223,18 +227,6 @@
             this.previousButton.TabIndex = 8;
             this.previousButton.UseVisualStyleBackColor = false;
             this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
-            // 
-            // showAlbumArtButton
-            // 
-            this.showAlbumArtButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.showAlbumArtButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showAlbumArtButton.Location = new System.Drawing.Point(12, 288);
-            this.showAlbumArtButton.Name = "showAlbumArtButton";
-            this.showAlbumArtButton.Size = new System.Drawing.Size(75, 37);
-            this.showAlbumArtButton.TabIndex = 16;
-            this.showAlbumArtButton.Text = "Show Asia Album Art";
-            this.showAlbumArtButton.UseVisualStyleBackColor = false;
-            this.showAlbumArtButton.Click += new System.EventHandler(this.showAlbumArtButton_Click);
             // 
             // label4
             // 
@@ -332,9 +324,9 @@
             // 
             this.playlistBox.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.playlistBox.FormattingEnabled = true;
-            this.playlistBox.Location = new System.Drawing.Point(126, 31);
+            this.playlistBox.Location = new System.Drawing.Point(148, 31);
             this.playlistBox.Name = "playlistBox";
-            this.playlistBox.Size = new System.Drawing.Size(281, 303);
+            this.playlistBox.Size = new System.Drawing.Size(259, 303);
             this.playlistBox.TabIndex = 23;
             this.playlistBox.DoubleClick += new System.EventHandler(this.playlistBox_DoubleClick);
             // 
@@ -354,7 +346,8 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pictureBox1.Location = new System.Drawing.Point(0, 331);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 118);
+            this.pictureBox1.Size = new System.Drawing.Size(142, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
@@ -362,7 +355,7 @@
             // 
             this.userNameTextBox.Location = new System.Drawing.Point(684, 356);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.userNameTextBox.Size = new System.Drawing.Size(161, 20);
             this.userNameTextBox.TabIndex = 26;
             // 
             // passwordTextBox
@@ -370,13 +363,13 @@
             this.passwordTextBox.Location = new System.Drawing.Point(684, 396);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(161, 20);
             this.passwordTextBox.TabIndex = 27;
             // 
             // logInButton
             // 
             this.logInButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.logInButton.Location = new System.Drawing.Point(701, 422);
+            this.logInButton.Location = new System.Drawing.Point(716, 422);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(75, 23);
             this.logInButton.TabIndex = 28;
@@ -389,7 +382,7 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(698, 337);
+            this.usernameLabel.Location = new System.Drawing.Point(726, 338);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(77, 15);
             this.usernameLabel.TabIndex = 29;
@@ -400,7 +393,7 @@
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel.ForeColor = System.Drawing.Color.White;
-            this.passwordLabel.Location = new System.Drawing.Point(698, 379);
+            this.passwordLabel.Location = new System.Drawing.Point(726, 379);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(73, 15);
             this.passwordLabel.TabIndex = 30;
@@ -436,14 +429,6 @@
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // currentTrackTextBox
-            // 
-            this.currentTrackTextBox.Location = new System.Drawing.Point(9, 186);
-            this.currentTrackTextBox.Name = "currentTrackTextBox";
-            this.currentTrackTextBox.Size = new System.Drawing.Size(100, 96);
-            this.currentTrackTextBox.TabIndex = 34;
-            this.currentTrackTextBox.Text = "";
-            // 
             // loginSuccessOrFailLabel
             // 
             this.loginSuccessOrFailLabel.AutoSize = true;
@@ -452,14 +437,70 @@
             this.loginSuccessOrFailLabel.Size = new System.Drawing.Size(0, 13);
             this.loginSuccessOrFailLabel.TabIndex = 35;
             // 
+            // artistLabel
+            // 
+            this.artistLabel.AutoSize = true;
+            this.artistLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.artistLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artistLabel.Location = new System.Drawing.Point(12, 16);
+            this.artistLabel.Name = "artistLabel";
+            this.artistLabel.Size = new System.Drawing.Size(94, 20);
+            this.artistLabel.TabIndex = 36;
+            this.artistLabel.Text = "artistLabel";
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(13, 36);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(65, 18);
+            this.titleLabel.TabIndex = 37;
+            this.titleLabel.Text = "titleLabel";
+            // 
+            // albumLabel
+            // 
+            this.albumLabel.AutoSize = true;
+            this.albumLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.albumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.albumLabel.Location = new System.Drawing.Point(13, 54);
+            this.albumLabel.Name = "albumLabel";
+            this.albumLabel.Size = new System.Drawing.Size(79, 16);
+            this.albumLabel.TabIndex = 38;
+            this.albumLabel.Text = "albumLabel";
+            // 
+            // songInfoPanel
+            // 
+            this.songInfoPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.songInfoPanel.Controls.Add(this.genreLabel);
+            this.songInfoPanel.Controls.Add(this.titleLabel);
+            this.songInfoPanel.Controls.Add(this.albumLabel);
+            this.songInfoPanel.Controls.Add(this.artistLabel);
+            this.songInfoPanel.Location = new System.Drawing.Point(0, 231);
+            this.songInfoPanel.Name = "songInfoPanel";
+            this.songInfoPanel.Size = new System.Drawing.Size(142, 100);
+            this.songInfoPanel.TabIndex = 39;
+            // 
+            // genreLabel
+            // 
+            this.genreLabel.AutoSize = true;
+            this.genreLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.genreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genreLabel.Location = new System.Drawing.Point(13, 70);
+            this.genreLabel.Name = "genreLabel";
+            this.genreLabel.Size = new System.Drawing.Size(70, 15);
+            this.genreLabel.TabIndex = 39;
+            this.genreLabel.Text = "genreLabel";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(857, 473);
+            this.Controls.Add(this.songInfoPanel);
             this.Controls.Add(this.loginSuccessOrFailLabel);
-            this.Controls.Add(this.currentTrackTextBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.searchResultsListBox);
@@ -475,7 +516,6 @@
             this.Controls.Add(this.songSearchTextBox);
             this.Controls.Add(this.searchBackground);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.showAlbumArtButton);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.pauseButton);
@@ -497,6 +537,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.editPlaylistBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.songInfoPanel.ResumeLayout(false);
+            this.songInfoPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,7 +559,6 @@
         private System.Windows.Forms.Button pauseButton;
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button nextButton;
-		private System.Windows.Forms.Button showAlbumArtButton;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.RichTextBox searchBackground;
 		private System.Windows.Forms.TextBox songSearchTextBox;
@@ -537,8 +578,12 @@
         private System.Windows.Forms.ListBox searchResultsListBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.RichTextBox currentTrackTextBox;
         private System.Windows.Forms.Label loginSuccessOrFailLabel;
+        private System.Windows.Forms.Label artistLabel;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label albumLabel;
+        private System.Windows.Forms.Panel songInfoPanel;
+        private System.Windows.Forms.Label genreLabel;
     }
 }
 

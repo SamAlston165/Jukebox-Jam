@@ -9,6 +9,6 @@ namespace Interfaces
 {
     public interface IImageSearch
     {
-        Image GetAlbumArt(string artist, string album);
+        string GetAlbumArtPath(string artist, string album);
     }
 }

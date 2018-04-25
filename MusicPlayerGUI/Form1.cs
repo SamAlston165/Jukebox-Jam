@@ -49,12 +49,12 @@ namespace MusicPlayerGUI
         private void Form1_Load(object sender, EventArgs e)
         {
             string trackHost = "http://159.65.235.100";
-            int trackPort = 6024;
+            int trackPort = 8080;
 
             //
             //chat
             //
-            //InitializeChat();
+            InitializeChat();
             login = new Login();
             user = new AUser("");
             //the next line shows how a user will be authenticated
@@ -73,7 +73,7 @@ namespace MusicPlayerGUI
             //current track and album art
             //
             //currentTrack = new CurrentTrack();
-            //imageSearch = new ImageSearch();
+            imageSearch = new AlbumArtSearch(trackHost, trackPort);
 
             //
             //search
@@ -112,8 +112,10 @@ namespace MusicPlayerGUI
             // this.chatTextEntryBox.Text = "";
 
             string message = String.Empty;
-            message = this.chatTextEntryBox.Text;
+            message = user.Username + ": " + this.chatTextEntryBox.Text;
             socket.Emit("chat", (message));
+
+            chatTextEntryBox.Text = "";
         }
 
         private void updateMessages(string text)
@@ -125,7 +127,7 @@ namespace MusicPlayerGUI
             }
             else
             {
-                this.chatFeedBox.Text = text;
+                this.chatFeedBox.Text += text + Environment.NewLine;
             }
         }
 
@@ -136,20 +138,18 @@ namespace MusicPlayerGUI
 
         private void InitializeChat()
         {
-            socket = IO.Socket("http://159.65.235.100:6024");
+            socket = IO.Socket("http://159.65.235.100:8080");
             socket.On(Socket.EVENT_CONNECT, () =>
             {
-                socket.Emit("chat", (data) =>
-                {
-                    Console.WriteLine("Chat is connected");
-                });
+                Console.WriteLine("client connected");
             });
 
             socket.On("chat", (data) =>
             {
-                var messages = new { messages = "" };
-                var messageVal = JsonConvert.DeserializeAnonymousType((string)data, messages);
-                updateMessages((string)messages.messages);
+                Console.WriteLine(data);
+                //var messages = new { messages = "" };
+                //var messageVal = JsonConvert.DeserializeAnonymousType((string)data, messages);
+                updateMessages((string)data);
             });
         }
 
@@ -177,7 +177,7 @@ namespace MusicPlayerGUI
             //make http request to queryURL
 
             //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
-            HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/asia/asia");
+            HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:8080/covers/asia/asia");
 
             //response from queryURL is a string which is the imageURL
             HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
@@ -191,10 +191,11 @@ namespace MusicPlayerGUI
                 responseText = reader.ReadToEnd();
             }
 
-            Console.WriteLine(responseText);
+            //Console.WriteLine(responseText);
 
             //update picture box based on new url
             pictureBox1.ImageLocation = responseText;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         //
@@ -253,6 +254,14 @@ namespace MusicPlayerGUI
                     + "Year: " + playlist.CurrentTrack.Year + Environment.NewLine;
 
                 currentTrackTextBox.Text = currentTrackDetails;
+
+                /*
+                try {
+                    string albumArtPath = imageSearch.GetAlbumArtPath(playlist.CurrentTrack.Artist, playlist.CurrentTrack.Album);
+                    pictureBox1.ImageLocation = albumArtPath;
+                }
+                catch (Exception e) { currentTrackTextBox.Text += e.Message; }
+                */
             }
             catch (Exception ex)
             {
@@ -361,6 +370,14 @@ namespace MusicPlayerGUI
             if (trackIsNotFirst)
             {
                 UpdateCurrentTrack(playlist.CurrentTrack);
+            }
+        }
+
+        private void chatTextEntryBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSend_Click(sender, e);
             }
         }
     }

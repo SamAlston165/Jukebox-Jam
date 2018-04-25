@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Track;
 using User;
-using Views;
 using System.Net;
 
 namespace MusicPlayerGUI

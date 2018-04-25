@@ -9,21 +9,9 @@ namespace Chat
 {
     public class ChatSender : IChatSender
     {
-        private IUser user;
-
-        public ChatSender(IUser user)
-        {
-            this.user = user;
-        }
-
-        public void ReceiveMessage()
-        {
-            throw new NotImplementedException();
-        }
-
         public void SendMessage(string message)
         {
-            string fullMessage = user.Username + ": " + message;
+            throw new NotImplementedException();
         }
     }
 }

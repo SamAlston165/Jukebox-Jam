@@ -16,18 +16,19 @@ using System.Windows.Forms;
 using Track;
 using User;
 using System.Net;
+using System.Threading;
 
 namespace MusicPlayerGUI
 {
     public partial class Form1 : Form
     {
-        //chat
+        //User Login
         private ILogin login;
         private IUser user;
-        //private IChatSender chatSender;
-        //private IChatReceiver chatReceiver;
+
+        //Chat Functionality
         private Socket socket;
-        public delegate void UpdateTextBoxMethod(string text);
+        private delegate void UpdateTextBoxMethod(string text);
 
         //playlist
         private IActivePlaylist playlist;
@@ -40,6 +41,9 @@ namespace MusicPlayerGUI
         //search
         private ISearch trackSearch;
 
+        //Connection to server and port
+        private const string serverHost = "http://159.65.235.100";
+        private const int serverPort = 8080;
 
         public Form1()
         {
@@ -48,37 +52,31 @@ namespace MusicPlayerGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string trackHost = "http://159.65.235.100";
-            int trackPort = 8080;
-
             //
             //chat
             //
-            InitializeChat(trackHost, trackPort);
+            InitializeChat(serverHost, serverPort);
             login = new Login();
             user = new AUser("");
             //the next line shows how a user will be authenticated
             //user = login.AuthorizeUser("username", "password");
 
-            //chatSender = new ChatSender(user);
-            //chatReceiver = new ChatReceiver();
-
             //
             // playlist
             //
             playlist = new ActivePlaylist(new APlaylist());
-            audioPlayer = new DBAudioPlayer(new AudioPlayer(), trackHost, trackPort);
+            audioPlayer = new DBAudioPlayer(new AudioPlayer(), serverHost, serverPort);
 
             //
             //current track and album art
             //
             //currentTrack = new CurrentTrack();
-            imageSearch = new AlbumArtSearch(trackHost, trackPort);
+            imageSearch = new AlbumArtSearch(serverHost, serverPort);
 
             //
             //search
             //
-            trackSearch = new DBSearch(trackHost, trackPort);
+            trackSearch = new DBSearch(serverHost, serverPort);
             SearchAllTracks();
 
             artistLabel.Text = "";
@@ -114,15 +112,39 @@ namespace MusicPlayerGUI
              */
         private void btnSend_Click(object sender, EventArgs e)
         {
-            // chatSender.SendMessage(chatTextEntryBox.Text);
-            // this.chatFeedBox.Text += Environment.NewLine + "User: " + this.chatTextEntryBox.Text;
-            // this.chatTextEntryBox.Text = "";
+            //Checks if user is logged in 
+            //If false throws error message
+            try
+            {
+                //Similar to check if username is null
+                if (user.Username != "")
+                {
+                    String message = String.Empty;
+                    message = user.Username + ": " + this.chatTextEntryBox.Text;
+                    socket.Emit("chat", (message));
+                    this.chatTextEntryBox.Text = "";
+                }
 
-            string message = String.Empty;
-            message = user.Username + ": " + this.chatTextEntryBox.Text;
-            socket.Emit("chat", (message));
+                else
+                {
+                    //Displays error message to user
+                    MessageBox.Show("User is not logged in", "Chat",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-            chatTextEntryBox.Text = "";
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            //Block that doesn't allow for text to be sent if username is similar to null
+            finally
+            {
+                if(user.Username == "")
+                {
+                    this.chatFeedBox.Text = "";
+                }
+            }
         }
 
         private void chatTextEntryBox_KeyDown(object sender, KeyEventArgs e)
@@ -145,25 +167,24 @@ namespace MusicPlayerGUI
                 this.chatFeedBox.Text += text + Environment.NewLine;
             }
         }
-
-        private void updateStatus()
-        {
-
-        }
-
         private void InitializeChat(string host, int port)
         {
             socket = IO.Socket(host + ":" + port.ToString());//"http://159.65.235.100:8080");
             socket.On(Socket.EVENT_CONNECT, () =>
             {
+                //Testing purposes
                 Console.WriteLine("client connected");
+
+                //Welcome Message
+                socket.Emit("chat", "***Chat is connected***");
             });
 
             socket.On("chat", (data) =>
             {
+                //Testing purposes
                 Console.WriteLine(data);
-                //var messages = new { messages = "" };
-                //var messageVal = JsonConvert.DeserializeAnonymousType((string)data, messages);
+               
+                //Constant Update Messages
                 updateMessages((string)data);
             });
         }
@@ -234,8 +255,6 @@ namespace MusicPlayerGUI
                 titleLabel.Text = playlist.CurrentTrack.Title;
                 albumLabel.Text = playlist.CurrentTrack.Album;
                 genreLabel.Text = playlist.CurrentTrack.Genre;
-
-
 
                 try {
                     string albumArtPath = imageSearch.GetAlbumArtPath(playlist.CurrentTrack.Artist, playlist.CurrentTrack.Album);
@@ -352,7 +371,6 @@ namespace MusicPlayerGUI
                 UpdateCurrentTrack(playlist.CurrentTrack);
             }
         }
-
 
         /*
         //

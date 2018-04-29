@@ -34,7 +34,11 @@ namespace User
         /// <returns></returns>
         private bool UsernameAndPasswordAreInDatabase(string username, string password)
         {
-            //allow user to "sign in" under any username they give
+            //allow user to "sign in" under any non-empty username
+            if(username.Equals(""))
+            {
+                return false;
+            }
             return true;
 
             /*

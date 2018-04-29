@@ -89,15 +89,15 @@ namespace MusicPlayerGUI
             // chatSender.SendMessage(chatTextEntryBox.Text);
             // this.chatFeedBox.Text += Environment.NewLine + "User: " + this.chatTextEntryBox.Text;
             // this.chatTextEntryBox.Text = "";
-
-            string username = String.Empty;
+            
             string message = String.Empty;
-            if (user != null)
+            if (user == null || user.Username.Equals(""))
             {
-                username = user.Username;
+                loginSuccessOrFailLabel.Text = "Please login to chat";
+                return;
             }
 
-            message = username + ": " + this.chatTextEntryBox.Text;
+            message = user.Username + ": " + this.chatTextEntryBox.Text;
             socket.Emit("chat", (message));
 
             chatTextEntryBox.Text = "";

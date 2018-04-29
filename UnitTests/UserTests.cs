@@ -16,46 +16,28 @@ namespace UnitTests
 
             //arrange
             var user = new AUser("");
+
+            //act
             user.Username = username;
 
             //assert
-            //Check if property matches the dynamic setter
-
             Assert.AreEqual(username, user.Username);
         }
 
         [TestMethod]
-        public void LoginWithValidUsernameAndPasswordIsSuccessful()
+        public void LoginWithAnyUsernameAndPasswordIsSuccessful()
         {
-            const string username = "user1";
+            const string expectedUsername = "user1";
             const string password = "user1";
 
             //arrange
             Login login = new Login();
-            var user = new Mock<IUser>();
 
             //act
-            //user.Object = login.AuthorizeUser(username, password);
+            string resultUsername = login.AuthorizeUser(expectedUsername, password).Username;
 
             //assert
-            //Assert.AreEqual(username, user.Username);
-        }
-
-        [TestMethod]
-        public void LoginWithInvalidUsernameAndPasswordReturnsNull()
-        {
-            const string username = "user1";
-            const string password = "asfd";
-
-            //arrange
-            Login login = new Login();
-            var user = new Mock<IUser>();
-
-            //act
-            //user.Object = login.AuthorizeUser(username, password);
-
-            //assert
-            //Assert.AreEqual(username, user.Username);
+            Assert.AreEqual(expectedUsername, resultUsername);
         }
     }
 }

@@ -80,6 +80,7 @@
             this.channelBox.FormattingEnabled = true;
             this.channelBox.ItemHeight = 15;
             this.channelBox.Items.AddRange(new object[] {
+            "(Disabled)",
             "+ Channel 1",
             "+ Channel 2",
             "+ Channel 3",

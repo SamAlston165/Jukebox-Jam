@@ -1,21 +1,11 @@
 ﻿using Audio;
 using Interfaces;
-using Newtonsoft.Json;
 using Playlist;
 using Quobject.SocketIoClientDotNet.Client;
 using Search;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Track;
 using User;
-using System.Net;
 
 namespace MusicPlayerGUI
 {
@@ -24,8 +14,6 @@ namespace MusicPlayerGUI
         //chat
         private ILogin login;
         private IUser user;
-        //private IChatSender chatSender;
-        //private IChatReceiver chatReceiver;
         private Socket socket;
         public delegate void UpdateTextBoxMethod(string text);
 
@@ -34,7 +22,6 @@ namespace MusicPlayerGUI
         private IAudioPlayer audioPlayer;
 
         //current track and album art
-        //private ICurrentTrack currentTrack;
         private IImageSearch imageSearch;
 
         //search
@@ -50,34 +37,20 @@ namespace MusicPlayerGUI
         {
             string trackHost = "http://159.65.235.100";
             int trackPort = 8080;
-
-            //
+            
             //chat
-            //
             InitializeChat(trackHost, trackPort);
             login = new Login();
             user = new AUser("");
-            //the next line shows how a user will be authenticated
-            //user = login.AuthorizeUser("username", "password");
-
-            //chatSender = new ChatSender(user);
-            //chatReceiver = new ChatReceiver();
-
-            //
+            
             // playlist
-            //
             playlist = new ActivePlaylist(new APlaylist());
-            audioPlayer = new DBAudioPlayer(new AudioPlayer(), trackHost, trackPort);
-
-            //
-            //current track and album art
-            //
-            //currentTrack = new CurrentTrack();
+            audioPlayer = new AudioPlayer();
+            
+            //album art
             imageSearch = new AlbumArtSearch(trackHost, trackPort);
-
-            //
+            
             //search
-            //
             trackSearch = new DBSearch(trackHost, trackPort);
             SearchAllTracks();
 
@@ -102,7 +75,6 @@ namespace MusicPlayerGUI
             {
                 //if server is not running, return static list of tracks
                 trackSearch = new StaticSongList();
-                audioPlayer = new AudioPlayer();
                 SearchAllTracks();
             }
         }
@@ -118,8 +90,14 @@ namespace MusicPlayerGUI
             // this.chatFeedBox.Text += Environment.NewLine + "User: " + this.chatTextEntryBox.Text;
             // this.chatTextEntryBox.Text = "";
 
+            string username = String.Empty;
             string message = String.Empty;
-            message = user.Username + ": " + this.chatTextEntryBox.Text;
+            if (user != null)
+            {
+                username = user.Username;
+            }
+
+            message = username + ": " + this.chatTextEntryBox.Text;
             socket.Emit("chat", (message));
 
             chatTextEntryBox.Text = "";
@@ -179,6 +157,16 @@ namespace MusicPlayerGUI
             {
                 loginSuccessOrFailLabel.Text = "Logged in as " + user.Username;
             }
+            userNameTextBox.Text = "";
+            passwordTextBox.Text = "";
+        }
+        
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                logInButton_Click(sender, e);
+            }
         }
 
         //
@@ -198,6 +186,14 @@ namespace MusicPlayerGUI
             }
         }
 
+        private void songSearchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchButton_Click(sender, e);
+            }
+        }
+
         private void addToPlaylistButton_Click(object sender, EventArgs e)
         {
             if (searchResultsListBox.SelectedItems != null)
@@ -208,6 +204,11 @@ namespace MusicPlayerGUI
                 }
                 UpdatePlaylist();
             }
+        }
+        
+        private void searchResultsListBox_DoubleClick(object sender, EventArgs e)
+        {
+            addToPlaylistButton_Click(sender, e);
         }
 
         //
@@ -352,39 +353,5 @@ namespace MusicPlayerGUI
                 UpdateCurrentTrack(playlist.CurrentTrack);
             }
         }
-
-
-        /*
-        //
-        //placeholder for showing album art
-        //
-        private void showAlbumArtButton_Click(object sender, EventArgs e)
-        {
-            //query this string to our server
-            //String queryURL = $"http://159.65.235.100/covers/{currentTrack.artist}/{currentTrack.album}";
-
-            //make http request to queryURL
-
-            //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:6024/covers/{currentTrack.artist}/{currentTrack.album}");
-            HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://159.65.235.100:8080/covers/Curtis-Mayfield/Super-Fly");
-
-            //response from queryURL is a string which is the imageURL
-            HttpWebResponse HttpWResp = (HttpWebResponse)myReq.GetResponse();
-
-            // Insert code that uses the response object.
-            WebHeaderCollection header = HttpWResp.Headers;
-            string responseText = string.Empty;
-            var encoding = ASCIIEncoding.ASCII;
-            using (var reader = new System.IO.StreamReader(HttpWResp.GetResponseStream(), encoding))
-            {
-                responseText = reader.ReadToEnd();
-            }
-
-            //Console.WriteLine(responseText);
-
-            //update picture box based on new url
-            pictureBox1.ImageLocation = responseText;
-        }
-    */
     }
 }

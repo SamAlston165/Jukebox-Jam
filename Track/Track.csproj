@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurrentTrack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticTrack.cs" />
     <Compile Include="DBTrack.cs" />

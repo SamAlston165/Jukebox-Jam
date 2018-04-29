@@ -16,6 +16,8 @@ namespace Track
         public string Genre { get; set; }
         public string Year { get; set; }
 
+        private string host;
+
         //empty constructor
         public DBTrack()
         {
@@ -24,6 +26,11 @@ namespace Track
             this.Album = "";
             this.Genre = "";
             this.Year = "";
+        }
+
+        public void SetHost(string host)
+        {
+            this.host = host;
         }
 
         public DBTrack(string artist, string title, string genre)
@@ -58,7 +65,7 @@ namespace Track
             string formatedArtist = this.Artist.Replace(' ', '-');
             string formatedSong = this.Title.Replace(' ', '-');
 
-            return $"/{formatedArtist}/{formatedSong}.mp3";
+            return host + $"/{formatedArtist}/{formatedSong}.mp3";
         }
     }
 }

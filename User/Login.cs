@@ -10,9 +10,12 @@ namespace User
 {
     public class Login : ILogin
     {
+        // we were unable to authorize users on the server
+        // users will be able to login using any username
+        // and password
         public IUser AuthorizeUser(string username, string password)
         {
-            if (UsernameAndPasswordAreInDatabase(username, password).GetAwaiter().GetResult())
+            if (UsernameAndPasswordAreInDatabase(username, password))
             {
                 return new AUser(username);
             }
@@ -29,21 +32,11 @@ namespace User
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        private async Task<bool> UsernameAndPasswordAreInDatabase(string username, string password)
+        private bool UsernameAndPasswordAreInDatabase(string username, string password)
         {
+            //allow user to "sign in" under any username they give
+            return true;
 
-            if(username == "user1" && password == "user1")
-            {
-                return true;
-            }
-            else if(username == "user2" && password == "user2")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
             /*
             //this code should perform the http requests once server is straightened out
             HttpClient client = new HttpClient();
@@ -72,7 +65,7 @@ namespace User
         /// <param name="password"></param>
         private void AddUserToDatabase(string username, string password)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

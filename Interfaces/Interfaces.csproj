@@ -45,11 +45,9 @@
     <Compile Include="IAudioPlayer.cs" />
     <Compile Include="IChatReceiver.cs" />
     <Compile Include="IChatSender.cs" />
-    <Compile Include="ICurrentTrack.cs" />
     <Compile Include="IImageSearch.cs" />
     <Compile Include="ILogin.cs" />
     <Compile Include="IPlaylist.cs" />
-    <Compile Include="IPlaylistSearch.cs" />
     <Compile Include="ISearch.cs" />
     <Compile Include="ITrack.cs" />
     <Compile Include="IUser.cs" />

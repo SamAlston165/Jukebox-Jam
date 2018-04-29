@@ -33,6 +33,7 @@ namespace Search
             List<ITrack> theResults = new List<ITrack>();
             foreach(DBTrack t in result)
             {
+                t.SetHost(host);
                 theResults.Add(t);
             }
             return theResults;

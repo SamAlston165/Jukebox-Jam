@@ -84,10 +84,8 @@ namespace UnitTests
             int trackPort = 6024;
 
             //arrange
-            var audioPlayer = new Mock<AudioPlayer>();
-
-            DBAudioPlayer sut = new DBAudioPlayer(audioPlayer.Object, trackHost, trackPort);
-            string validTrackPath = "/David-Bowie/Under-Pressure.mp3";
+            AudioPlayer sut = new AudioPlayer();
+            string validTrackPath = trackHost + ":" + trackPort + "/David-Bowie/Under-Pressure.mp3";
             sut.LoadTrack(validTrackPath);
 
             //act

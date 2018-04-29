@@ -19,7 +19,7 @@ namespace UnitTests
         public void SearchAllSongsIsSuccessful()
         {
             string trackHost = "http://159.65.235.100";
-            int trackPort = 6024;
+            int trackPort = 8080;
 
             //arrange
             DBSearch search = new DBSearch(trackHost, trackPort);
@@ -35,7 +35,7 @@ namespace UnitTests
         public void SearchByArtistIsSuccessful()
         {
             string trackHost = "http://159.65.235.100";
-            int trackPort = 6024;
+            int trackPort = 8080;
 
             //arrange
             DBSearch search = new DBSearch(trackHost, trackPort);
@@ -51,7 +51,7 @@ namespace UnitTests
         public void SearchByTitleIsSuccessful()
         {
             string trackHost = "http://159.65.235.100";
-            int trackPort = 6024;
+            int trackPort = 8080;
 
             //arrange
             DBSearch search = new DBSearch(trackHost, trackPort);
@@ -67,7 +67,7 @@ namespace UnitTests
         public void SearchByGenreIsSuccessful()
         {
             string trackHost = "http://159.65.235.100";
-            int trackPort = 6024;
+            int trackPort = 8080;
 
             //arrange
             DBSearch search = new DBSearch(trackHost, trackPort);
@@ -83,7 +83,7 @@ namespace UnitTests
         public void SearchTermNotOnServerReturnsZeroResults()
         {
             string trackHost = "http://159.65.235.100";
-            int trackPort = 6024;
+            int trackPort = 8080;
 
             //arrange
             DBSearch search = new DBSearch(trackHost, trackPort);

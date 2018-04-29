@@ -233,7 +233,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(551, 3);
+            this.label4.Location = new System.Drawing.Point(541, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 25);
             this.label4.TabIndex = 17;
@@ -255,6 +255,7 @@
             this.songSearchTextBox.Name = "songSearchTextBox";
             this.songSearchTextBox.Size = new System.Drawing.Size(186, 20);
             this.songSearchTextBox.TabIndex = 20;
+            this.songSearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.songSearchTextBox_KeyDown);
             // 
             // editPlaylistBox
             // 
@@ -364,6 +365,7 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(161, 20);
             this.passwordTextBox.TabIndex = 27;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // logInButton
             // 
@@ -406,6 +408,7 @@
             this.searchResultsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.searchResultsListBox.Size = new System.Drawing.Size(186, 186);
             this.searchResultsListBox.TabIndex = 31;
+            this.searchResultsListBox.DoubleClick += new System.EventHandler(this.searchResultsListBox_DoubleClick);
             // 
             // label5
             // 
@@ -420,7 +423,7 @@
             // searchButton
             // 
             this.searchButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.searchButton.Location = new System.Drawing.Point(542, 86);
+            this.searchButton.Location = new System.Drawing.Point(546, 86);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 33;

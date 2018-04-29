@@ -78,10 +78,10 @@ namespace UnitTests
         /// The server must be running for this test to pass
         /// </summary>
         [TestMethod]
-        public void PlayingATrackFromTheServerIsSuccessful()
+        public void PlayingTrackFromTheServerIsSuccessful()
         {
             string trackHost = "http://159.65.235.100";
-            int trackPort = 6024;
+            int trackPort = 8080;
 
             //arrange
             AudioPlayer sut = new AudioPlayer();

@@ -55,7 +55,7 @@ namespace Playlist
                 return false;
             }
         }
-        //REWRITE SO AS NOT TO VIOLATE ABSTRACTION
+        
         public ITrack GetTrack(int index)
         {
             if(IsAValidTrackListIndex(index))

@@ -131,7 +131,7 @@ namespace MusicPlayerGUI
 
         private void InitializeChat(string host, int port)
         {
-            socket = IO.Socket(host + ":" + port.ToString());//"http://159.65.235.100:8080");
+            socket = IO.Socket(host + ":" + port.ToString());
             socket.On(Socket.EVENT_CONNECT, () =>
             {
                 Console.WriteLine("client connected");
@@ -140,8 +140,6 @@ namespace MusicPlayerGUI
             socket.On("chat", (data) =>
             {
                 Console.WriteLine(data);
-                //var messages = new { messages = "" };
-                //var messageVal = JsonConvert.DeserializeAnonymousType((string)data, messages);
                 updateMessages((string)data);
             });
         }

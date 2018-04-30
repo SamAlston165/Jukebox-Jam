@@ -11,7 +11,7 @@ namespace User
     public class Login : ILogin
     {
         // we were unable to authorize users on the server
-        // users will be able to login using any username
+        // users will be able to login using any non-empty username
         // and password
         public IUser AuthorizeUser(string username, string password)
         {
